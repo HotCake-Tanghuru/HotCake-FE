@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+  <meta charset="UTF-8">
+  <title>User Page</title>
+  <link rel="stylesheet" href="../css/common.css">
+  <link rel="stylesheet" href="../css/user_styles.css">
+</head>
+
+<body>
+  <!-- 상단바 -->
+  <div class="mobile-navbar">
+    <img src="../assets/images/hotcake.png" alt="HotCake Icon" class="hotcake-icon">
+    <span class="user-text">프로필</span>
+  </div>
+
+  <!-- 프로필 수정 메인 -->
+  <div class="main-content">
+    <!-- 프로필 이미지 -->
+    <img src="../assets/images/profile.png" alt="Profile Image" class="profile-image">
+
+    <!-- 닉네임 표시 -->
+    <div class="name-rectangle-box">핫케이크조아</div>
+
+    <!-- 팔로워 -->
+    <span class="followers-text"><a href="./followers.html" class="follow-what">팔로워</a></span>
+    <span class="followers-num"><a href="./followers.html" class="follow-what">0</a></span>
+
+    <!-- 팔로잉 -->
+    <span class="followings-text"><a href="./followings.html" class="follow-what">팔로잉</a></span>
+    <span class="followings-num"><a href="./followings.html" class="follow-what">0</a></span>
+
+    <!-- 프로필 수정 -->
+    <button class="edit-button" onclick="goToEditPage()">수정하기</button>
+
+    <!-- 자기소개 -->
+    <div class="intro-rectangle-box">모두 안녕하세요 :) !! 저는 맛집과 여행지 위주의 트렌드를 즐기는, 핫케이크 조아 라고 합니다 ♡ 팔로우 하시면 실시간 핫트렌드를 보실 수
+      있어요 !</div>
+
+    <!-- 스탬프 페이지 이동 -->
+    <button class="stamp-button" onclick="goToStampPage()">스탬프 확인하기</button>
+
+    <!-- 리스트 이동 -->
+
+    <div class="list-container">
+      <a href="#">겨울 여행지 LIST</a>
+      <a href="#">겨울 간식 LIST</a>
+      <a href="#">가을 LIST</a>
+      <a href="#">제주도 먹거리 LIST</a>
+    </div>
+  </div>
+  <script>
+    // 프로필 수정 이동
+    function goToEditPage() {
+      window.location.href = "./edit_user.html";
+    }
+
+    // 스탬프 이동
+    function goToStampPage() {
+      window.location.href = "./my_stamp.html";
+    }
+  </script>
+  <script src="../js/scripts.js"></script>
+</body>
+
+</html>

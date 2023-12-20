@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hotcake Page</title>
+  <link rel="stylesheet" href="../css/common.css">
+  <link rel="stylesheet" href="../css/edit_user_styles.css">
+
+
+</head>
+
+<body>
+  <!-- 상단바 -->
+  <div class="mobile-navbar">
+    <img src="../assets/images/hotcake.png" alt="HotCake Icon" class="hotcake-icon">
+    <span class="hotcake-text">프로필 수정</span>
+  </div>
+
+  <!-- 프로필 사진 수정 -->
+  <div class="dotted-rectangle">
+    <div class="button-container">
+      <label for="file-input" class="upload-button">+</label>
+      <input type="file" id="file-input" style="display: none;" />
+    </div>
+  </div>
+
+  <!-- 닉네임 수정 상자 -->
+  <div class="edit-nickname">
+    <p>닉네임</p>
+    <div class="edit-rectangle"></div>
+  </div>
+
+  <!-- 자기소개 수정 상자 -->
+  <div class="intro">
+    <p>자기소개</p>
+    <div class="intro-rectangle"></div>
+  </div>
+  <!-- 수정 완료시 누르는 수정하기 버튼 -->
+  <button class="edit-success-button" onclick="editSuccess()">수정하기</button>
+  <script>
+    function editSuccess() {
+
+    }
+  </script>
+  <script src="../js/scripts.js"></script>
+</body>
+
+</html>

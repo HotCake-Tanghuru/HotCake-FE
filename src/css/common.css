@@ -1,8 +1,8 @@
 
 @font-face {
     font-family: 'Ownglyph RDO ballpen'; 
-    src: url('Font/Ownglyph_RDO_ballpen-Rg.woff2') format('woff2'),
-      url('Font/Ownglyph_RDO_ballpen-Rg.woff') format('woff');
+    src: url('../assets/fonts/Ownglyph_RDO_ballpen-Rg.woff2') format('woff2'),
+      url('../assets/fonts/Ownglyph_RDO_ballpen-Rg.woff') format('woff');
   
   }
   
