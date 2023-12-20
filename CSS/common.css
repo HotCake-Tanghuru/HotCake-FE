@@ -1,0 +1,55 @@
+
+@font-face {
+    font-family: 'Ownglyph RDO ballpen'; 
+    src: url('Font/Ownglyph_RDO_ballpen-Rg.woff2') format('woff2'),
+      url('Font/Ownglyph_RDO_ballpen-Rg.woff') format('woff');
+  
+  }
+  
+  /* 기본 스타일 */
+  body {
+    background-color: white;
+    font-family: 'Ownglyph RDO ballpen'; 
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; /* 가상 요소의 위치를 정하기 위해 상대적으로 설정 */
+    height: 100vh; /* 화면 높이를 전체로 채우기 위해 설정 */
+  }
+  
+  /* 가상 요소를 사용한 배경 색상 및 위치 조정 */
+  body::before {
+    content: '';
+    position: absolute;
+    top: 10%; /* 화면 위쪽에서 10% 지점에 배치 */
+    left: 50%;
+    transform: translateX(-50%) scale(1.2); /* 비율 유지하면서 확대 */
+    width: 320px; /* 원하는 모바일 화면 가로 크기 */
+    height: 568px; /* 원하는 모바일 화면 세로 크기 */
+    background-color: #F1EEDF; /* 모바일 화면 전체 배경 색상 설정 */
+    z-index: -1; /* body 내의 다른 요소 위에 위치하도록 설정 */
+  }
+  
+  /* 모바일 상단 바에 해당하는 부분에만 배경 색상 변경 */
+  body::after {
+    content: '';
+    position: absolute;
+    top: 3%; /* 화면 상단에 배치 */
+    left: 50%;
+    transform: translateX(-50%) scale(1.2); 
+    width: 320px; /* 모바일 화면 가로 크기와 동일하게 설정 */
+    height: 5%; /* 모바일 상단 바 사이즈 */
+    background-color: #F5F2E9; /* 모바일 상단 바 배경 색상 설정 */
+  
+  }
+  
+  .mobile-navbar {
+    position: absolute;
+    height: 50px;
+    background-color: #F1EEDF;
+    display: flex;
+    align-items: flex-start; /* 아이콘이 상단에 정렬되도록 설정 */
+    padding-right: 20px; /* 아이콘이 오른쪽과의 간격을 조절하기 위해 */
+    margin-top: 20px; /* 상단 여백을 추가하여 아이콘이 위로 올라가도록 설정 */
+  }

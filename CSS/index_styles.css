@@ -1,0 +1,101 @@
+
+/* user 아이콘 스타일 */
+.user-icon {
+  width: 30px;
+  height: auto;
+  margin-top: -333px;
+  position: absolute;
+  left: 160px; 
+  z-index: 1;
+}
+
+/* hotcake 아이콘 스타일 */
+.hotcake-icon {
+  width: 30px;
+  margin-top: -333px;
+  position: absolute;
+  right: 160px;
+  z-index: 1;
+}
+
+/* hotcake 텍스트 스타일 */
+.hotcake-text {
+  font-size: 24px;
+  width: 70px;
+  margin-top: -333px;
+  position: absolute;
+  right: 80px; 
+  z-index: 1;
+}
+
+
+.image-container {
+  position: relative;
+  width: 300px;
+  margin-top: -30px;
+}
+
+/* 어두운 효과 */
+.darken-image  {
+  width: 100%;
+  display: block;
+  filter: brightness(50%); 
+}
+
+/* 텍스트 오버레이 */
+.text-overlay {
+  width: 300px;
+  position: absolute;
+  top: 18%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  font-size: 30px;
+  opacity: 0.8; 
+}
+
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* 호버 효과 */
+a:hover .image-container img {
+  filter: brightness(100%);
+}
+
+.trendy-friends{
+  font-size: 24px;
+}
+
+.user1-info p {
+  margin-bottom: 5px;
+  font-size: 20px;
+}
+
+.user1-photos {
+  display: flex;
+  justify-content: center; 
+  margin-top: 10px; 
+}
+
+.user1-photos img {
+  margin: 0 5px; 
+}
+
+.user2-info p {
+  margin-bottom: 5px;
+  font-size: 20px;
+}
+
+.user2-photos {
+  display: flex;
+  justify-content: center; 
+  margin-top: 10px; 
+}
+
+.user2-photos img {
+  margin: 0 5px; 
+}
