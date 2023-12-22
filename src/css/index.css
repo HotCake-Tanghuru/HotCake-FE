@@ -1,28 +1,5 @@
-/* user 아이콘 스타일 */
-.user-icon {
-  width: 30px;
-  height: auto;
-  margin-top: -333px;
-  position: absolute;
-  left: 160px; 
-  z-index: 1;
-}
-
-/* hotcake 텍스트 스타일 */
-.hotcake-text {
-  font-size: 24px;
-  width: 70px;
-  margin-top: -333px;
-  position: absolute;
-  right: 80px; 
-  z-index: 1;
-}
-
-
 .image-container {
-  position: relative;
-  width: 300px;
-  margin-top: -30px;
+  height: calc(100% * 0.2);
 }
 
 /* 어두운 효과 */
@@ -43,12 +20,6 @@
   color: white;
   font-size: 30px;
   opacity: 0.8; 
-}
-
-
-a {
-  text-decoration: none;
-  color: inherit;
 }
 
 /* 호버 효과 */

@@ -31,6 +31,8 @@ dd {
 ul[role='list'],
 ol[role='list'] {
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 /* 핵심 body의 기본값을 설정합니다. */
@@ -77,6 +79,7 @@ button,
 textarea,
 select {
   font: inherit;
+  color: inherit;
 }
 
 /* 행 속성이 없는 textarea가 너무 작지 않도록 합니다. */
@@ -120,6 +123,7 @@ body {
   min-height: 100vh;
   background-color: var(--cream, #F1EEDF);
   width: calc(100vh * 0.75);
+  max-width: 100vw;
 }
 
 header {
@@ -178,4 +182,25 @@ header {
 
 .navbar .user-profile .user-nickname:hover {
   text-decoration: underline;
+}
+
+.content-container {
+  margin: 0 1rem;
+  padding: 2rem 0;
+}
+
+.btn{
+  background-color: var(--gold, #F9DF98);
+  border: none;
+  text-align: center;
+  padding: 0.25rem 1rem;
+  cursor: pointer;
+  border-radius: 1rem;
+}
+
+/* 가로로 정렬 */
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

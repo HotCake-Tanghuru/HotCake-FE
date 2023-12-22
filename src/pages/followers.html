@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hotcake Page</title>
   <link rel="stylesheet" href="../css/common.css">
-  <link rel="stylesheet" href="../css/followers.css">
+  <link rel="stylesheet" href="../css/follow.css">
 
 
 </head>
@@ -36,35 +36,40 @@
 
     <!-- Begin main -->
     <main>
-      <!-- 팔로워 검색 -->
-      <div class="gray-rectangle">
-        <img src="../assets/images/search.png" alt="Search" class="search-icon" id="searchIcon">
+      <div class="content-container">
+        <form action="" class="search-form">
+          <!-- <label for="search">검색</label> -->
+          <input type="search" name="nickname" id="search" required placeholder="닉네임 검색" maxlength="200">
+          <button type="submit">검색</button>
+        </form>
+
+        <!-- 팔로워하는 사용자, 이름, 팔로우 버튼 -->
+        <ul role="list" class="follow-list">
+          <li class="follow-user">
+            <div class="row-1">
+              <div class="follow-user-image"></div>
+              <p class="follow-user-name">오르미</p>
+            </div>
+            <div class="row-1 follow-buttons">
+              <button class="btn follower-button">팔로우</button>
+              <button class="btn delete-button">삭제</button>
+            </div>
+          </li>
+          <li class="follow-user">
+            <div class="row-1">
+              <div class="follow-user-image"></div>
+              <p class="follow-user-name">라이캣 정말 귀여워~~~~~~~~!!!</p>
+            </div>
+            <div class="row-1 follow-buttons">
+              <button class="btn follower-button">팔로우</button>
+              <button class="btn delete-button">삭제</button>
+            </div>
+          </li>
+        </ul>
       </div>
     </main>
     <!-- End main -->
 
-
-
-    <!-- 팔로워하는 사용자, 이름, 팔로우 버튼 -->
-    <div class="flex-container">
-      <div class="set">
-        <div class="followers-image-circle"></div>
-        <p class="followers-name">오르미</p>
-        <button class="shared-button followers-button">팔로우</button>
-        <!-- 삭제 버튼 추가 -->
-        <button class="shared-button out-button">삭제</button>
-      </div>
-
-
-      <!-- 그다음 팔로워.. -->
-      <div class="set">
-        <div class="followers-image-circle"></div>
-        <p class="followers-name">라이캣</p>
-        <button class="shared-button followers-button">팔로우</button>
-        <!-- 삭제 버튼 추가 -->
-        <button class="shared-button out-button">삭제</button>
-      </div>
-    </div>
     <!-- Begin footer -->
     <footer>
       <div class="container">

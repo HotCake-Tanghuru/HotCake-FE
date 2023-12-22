@@ -1,91 +1,97 @@
-.dotted-rectangle {
+.image-upload-button {
   width: 100px;
   height: 100px;
+  margin: 0 auto;
+  margin-bottom: 1rem;
+}
+
+.image-upload-button>input {
+  display: none;
+}
+
+.image-upload-button>label {
+  display: block;
+  width: 100%;
+  height: 100%;
   border: 7px dashed #9E7959;
-  position: relative;
-  margin: 50px auto;
-  top: -30%;
-}
-
-.edit-nickname {
-  position: absolute;
-  top: 30%;
-}
-
-.edit-nickname p {
-  font-size: 24px;
-  margin-bottom: 10px;
-  color: #9E7959;
-  font-weight: bold;
-
-}
-
-.edit-rectangle {
-  width: 250px;
-  height: 40px;
-  border: 2px solid #9E7959;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.button-container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.upload-button {
-  display: inline-block;
-  width: 50px;
-  height: 50px;
-  line-height: 50px;
-  border: 2px solid #333;
-  font-size: 24px;
-  cursor: pointer;
-  text-align: center;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   user-select: none;
 }
 
-.upload-button:hover {
-  background-color: #f0f0f0;
+.image-upload-button>label:hover {
+  background-color: var(--light-beige, #F9DF98);
+  font-size: 3rem;
 }
 
-.intro {
-  position: relative;
-  text-align: center;
-  margin-top: 70px;
+.edit-text {
+  max-width: 400px;
+  margin: 0 auto;
 }
 
-.intro p {
-  font-size: 24px;
+.edit-nickname {
+  margin-bottom: 1rem;
+}
+
+.edit-nickname label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #9E7959;
   font-weight: bold;
 }
 
-.intro-rectangle {
-  width: 250px;
-  height: 200px;
+.edit-nickname input {
+  max-width: 400px;
+  width: 100%;
+  padding: 0.25rem 0.5rem;
   border: 2px solid #9E7959;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+  border-radius: 0.5rem;
+  background-color: transparent;
+}
+
+.edit-nickname input:focus-visible {
+  outline: none;
+  background-color: white;
+}
+
+.edit-intro {
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+
+.edit-intro label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #9E7959;
+  font-weight: bold;
+}
+
+.edit-intro textarea {
+  max-width: 400px;
+  width: 100%;
+  height: 12.5rem;
+  padding: 0.25rem 0.5rem;
+  border: 2px solid #9E7959;
+  border-radius: 0.5rem;
+  background-color: transparent;
+  resize: none;
+}
+
+.edit-intro textarea:focus-visible {
+  outline: none;
+  background-color: white;
 }
 
 .edit-success-button {
-  width: 200px;
-  background-color: var(--coffee-brown, #F9DF98);
-  ;
-  border: none;
-  color: brown;
-  text-align: center;
-  display: inline-block;
-  font-size: 20px;
-  padding: 10px 20px;
-  cursor: pointer;
-  border-radius: 35px;
-  font-family: 'Ownglyph RDO ballpen';
-  position: absolute;
-  top: 260px;
-  transform: translateX(-50%);
+  width: 100%;
+  margin: 0 auto;
+  margin-bottom: 1rem;
+}
+
+.edit-success-button>button {
+  width: 100%;
+  margin: 0 auto;
+  margin-bottom: 1rem;
 }

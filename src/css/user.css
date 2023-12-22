@@ -1,125 +1,66 @@
-.main-content {
-  position: absolute;
+.profile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
 }
 
-.profile-image {
-  width: 100px;
-  margin-top: 30px;
-  left: -90px;
-  position: absolute;
-  z-index: 1;
+.profile .profile-image {
+  background-color: #F9DF98;
+  border-right: 0.75rem solid #9E7959;
+  border-top: 0.875rem solid #9E7959;
+  border-radius: 20%;
+  min-width: 100px;
+  width: 30%;
+  height: 100px;
+  background-image: url('../assets/images/profile.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  mask-image: url('../assets/images/bread.png');
+  mask-position: center;
+  mask-size: contain;
+  mask-repeat: no-repeat;
 }
 
-.name-rectangle-box {
-  font-size: 25px;
-  width: 200px;
-  height: 30px;
-  background-color: white;
-  color: brown;
-  text-align: center;
-  line-height: 30px;
-  border-radius: 10px;
-  position: absolute;
-  margin-top: 20px;
-  right: -60px;
+.profile .profile-info {
+  min-width: 50%;
 }
 
-.followers-text {
-  font-size: 24px;
-  width: 70px;
-  position: absolute;
-  margin-top: 65px;
-  right: 40px;
-}
-
-.followings-text {
-  font-size: 24px;
-  width: 70px;
-  position: absolute;
-  margin-top: 65px;
-  right: -60px;
-}
-
-.followers-num {
-  font-size: 24px;
-  width: 70px;
-  position: absolute;
-  margin-top: 95px;
-  right: 25px;
-}
-
-.followings-num {
-  font-size: 24px;
-  width: 70px;
-  position: absolute;
-  margin-top: 95px;
-  right: -75px;
-}
-
-
-/* 버튼 스타일 지정 */
 .edit-button {
-  width: 150px;
-  background-color: var(--coffee-brown, #F9DF98);
-  ;
-  border: none;
-  color: brown;
-  text-align: center;
-  display: inline-block;
-  font-size: 20px;
-  padding: 10px 20px;
-  cursor: pointer;
-  border-radius: 35px;
-  font-family: 'Ownglyph RDO ballpen';
-  position: absolute;
-  margin-top: 140px;
-  left: 40px;
+  width: 100%;
 }
 
-.intro-rectangle-box {
-  width: 300px;
-  height: 120px;
-  background-color: var(--coffee-brown, #BC9982);
-  ;
-  color: #F1EEDF;
-  font-size: 20px;
+.nickname-box {
+  background-color: var(--light-beige, #F5F2E9);
   text-align: center;
-  line-height: 30px;
-  position: absolute;
-  margin-top: 200px;
-  left: -70px;
-  z-index: 1;
+  border: 2px solid var(--gold, #F9DF98);
+  border-radius: 1rem;
+}
+
+.follow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 2rem;
+}
+
+.intro-box {
+  width: 100%;
+  height: 120px;
+  background-color: var(--almond, #BC9982);
+  color: #F1EEDF;
+  padding: 1rem;
+  margin-bottom: 1rem;
 }
 
 .stamp-button {
-  background-color: var(--coffee-brown, #F9DF98);
-  ;
-  border: none;
-  color: brown;
-  text-align: center;
-  display: inline-block;
-  font-size: 20px;
-  padding: 5px;
-  width: 250px;
-  cursor: pointer;
-  border-radius: 35px;
-  font-family: 'Ownglyph RDO ballpen';
-  position: absolute;
-  margin-top: 330px;
-  right: -40px;
-}
-
-.follow-what {
-  color: black;
-  text-decoration: none;
-}
-
-.list-container {
-  margin-top: 400px;
+  margin-bottom: 1rem;
 }
 
 .list-container a {
-  text-decoration: none;
   color: #9E7959;
   font-size: 26px;
   display: block;
