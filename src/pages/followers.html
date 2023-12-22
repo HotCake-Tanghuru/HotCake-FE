@@ -6,44 +6,74 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hotcake Page</title>
   <link rel="stylesheet" href="../css/common.css">
-  <link rel="stylesheet" href="../css/followers_styles.css">
+  <link rel="stylesheet" href="../css/followers.css">
 
 
 </head>
 
 <body>
-  <!-- 상단바 -->
-  <div class="mobile-navbar">
-    <img src="../assets/images/hotcake.png" alt="HotCake Icon" class="hotcake-icon">
-    <span class="hotcake-text">팔로워</span>
-  </div>
+  <div class="wrap">
+    <!-- Begin header -->
+    <header>
+      <!-- 상단바 -->
+      <div class="navbar">
+        <h1 class="page-logo">
+          <a href="./index.html" class="link-container">
+            <img src="../assets/images/hotcake.png" alt="HotCake Icon" class="hotcake-logo">
+            <span>핫케이크</span>
+          </a>
+        </h1>
+        <div class="user-profile">
+          <a href="./edit_user.html">
+            <div class="user-img"></div>
+            <span class="user-nickname">닉네임</span>
+          </a>
+        </div>
+      </div>
+    </header>
+    <!-- End header -->
 
-  <!-- 팔로워 검색 -->
-  <main>
-    <div class="gray-rectangle">
-      <img src="../assets/images/search.png" alt="Search" class="search-icon" id="searchIcon">
+
+    <!-- Begin main -->
+    <main>
+      <!-- 팔로워 검색 -->
+      <div class="gray-rectangle">
+        <img src="../assets/images/search.png" alt="Search" class="search-icon" id="searchIcon">
+      </div>
+    </main>
+    <!-- End main -->
+
+
+
+    <!-- 팔로워하는 사용자, 이름, 팔로우 버튼 -->
+    <div class="flex-container">
+      <div class="set">
+        <div class="followers-image-circle"></div>
+        <p class="followers-name">오르미</p>
+        <button class="shared-button followers-button">팔로우</button>
+        <!-- 삭제 버튼 추가 -->
+        <button class="shared-button out-button">삭제</button>
+      </div>
+
+
+      <!-- 그다음 팔로워.. -->
+      <div class="set">
+        <div class="followers-image-circle"></div>
+        <p class="followers-name">라이캣</p>
+        <button class="shared-button followers-button">팔로우</button>
+        <!-- 삭제 버튼 추가 -->
+        <button class="shared-button out-button">삭제</button>
+      </div>
     </div>
-  </main>
-
-  <!-- 팔로워하는 사용자, 이름, 팔로우 버튼 -->
-  <div class="flex-container">
-    <div class="set">
-      <div class="followers-image-circle"></div>
-      <p class="followers-name">오르미</p>
-      <button class="shared-button followers-button">팔로우</button>
-      <!-- 삭제 버튼 추가 -->
-      <button class="shared-button out-button">삭제</button>
-    </div>
-
-
-    <!-- 그다음 팔로워.. -->
-    <div class="set">
-      <div class="followers-image-circle"></div>
-      <p class="followers-name">라이캣</p>
-      <button class="shared-button followers-button">팔로우</button>
-      <!-- 삭제 버튼 추가 -->
-      <button class="shared-button out-button">삭제</button>
-    </div>
+    <!-- Begin footer -->
+    <footer>
+      <div class="container">
+        <div class="page-desc">
+          <p>©2023 Tanghuru All rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+    <!-- End footer -->
   </div>
 
   <script src="../js/scripts.js"></script>

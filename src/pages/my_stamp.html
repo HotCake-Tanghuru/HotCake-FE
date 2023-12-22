@@ -5,48 +5,78 @@
   <meta charset="UTF-8">
   <title>My Stamp Page</title>
   <link rel="stylesheet" href="../css/common.css">
-  <link rel="stylesheet" href="../css/my_stamp_styles.css">
+  <link rel="stylesheet" href="../css/my_stamp.css">
 </head>
 
 <body>
+  <div class="wrap">
+    <!-- Begin header -->
+    <header>
+      <!-- 상단바 -->
+      <div class="navbar">
+        <h1 class="page-logo">
+          <a href="./index.html" class="link-container">
+            <img src="../assets/images/hotcake.png" alt="HotCake Icon" class="hotcake-logo">
+            <span>핫케이크</span>
+          </a>
+        </h1>
+        <div class="user-profile">
+          <a href="./edit_user.html">
+            <div class="user-img"></div>
+            <span class="user-nickname">닉네임</span>
+          </a>
+        </div>
+      </div>
+    </header>
+    <!-- End header -->
 
-  <!-- 상단바 -->
-  <div class="mobile-navbar">
-    <img src="../assets/images/hotcake.png" alt="HotCake Icon" class="hotcake-icon">
-    <span class="stamp-text">스탬프</span>
+
+    <!-- Begin main -->
+    <main>
+
+      <!-- 설명 -->
+      <span class="my-stamp-text">내 스탬프</span>
+      <img src="../assets/images/hotcakestamp.png" alt="HotCakeStamp Icon" class="hotcake-stamp-icon">
+      <img src="../assets/images/tape.png" alt="masking tape" class="masking-tape">
+
+      <!-- 스탬프 배경에 12개의 스탬프 원 배경 배치 -->
+      <div class="rectangle-box-container">
+        <div class="stamp-circle"></div>
+        <div class="stamp-circle"></div>
+        <div class="stamp-circle"></div>
+        <div class="stamp-circle"></div>
+        <div class="stamp-circle"></div>
+        <div class="stamp-circle"></div>
+        <div class="stamp-circle"></div>
+        <div class="stamp-circle"></div>
+        <div class="stamp-circle"></div>
+        <div class="stamp-circle"></div>
+        <div class="stamp-circle"></div>
+        <div class="stamp-circle"></div>
+      </div>
+
+      <!-- 스탬프 공유 버튼 -->
+      <button class="stamp-share-button" onclick="StampShare()">　스탬프 공유하기</button>
+      <img src="../assets/images/share.png" alt="share Icon" class="share-icon">
+    </main>
+    <!-- End main -->
+
+    <!-- Begin footer -->
+    <footer>
+      <div class="container">
+        <div class="page-desc">
+          <p>©2023 Tanghuru All rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+    <!-- End footer -->
   </div>
 
-  <!-- 설명 -->
-  <span class="my-stamp-text">내 스탬프</span>
-  <img src="../assets/images/hotcakestamp.png" alt="HotCakeStamp Icon" class="hotcake-stamp-icon">
-  <img src="../assets/images/tape.png" alt="masking tape" class="masking-tape">
-
-  <!-- 스탬프 배경에 12개의 스탬프 원 배경 배치 -->
-  <div class="rectangle-box-container">
-    <div class="stamp-circle"></div>
-    <div class="stamp-circle"></div>
-    <div class="stamp-circle"></div>
-    <div class="stamp-circle"></div>
-    <div class="stamp-circle"></div>
-    <div class="stamp-circle"></div>
-    <div class="stamp-circle"></div>
-    <div class="stamp-circle"></div>
-    <div class="stamp-circle"></div>
-    <div class="stamp-circle"></div>
-    <div class="stamp-circle"></div>
-    <div class="stamp-circle"></div>
-  </div>
-
-  <!-- 스탬프 공유 버튼 -->
-  <button class="stamp-share-button" onclick="StampShare()">　스탬프 공유하기</button>
-  <img src="../assets/images/share.png" alt="share Icon" class="share-icon">
   <script>
     function StampShare() {
 
     }
   </script>
-
-
 </body>
 
 </html>

@@ -6,38 +6,67 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hotcake Page</title>
   <link rel="stylesheet" href="../css/common.css">
-  <link rel="stylesheet" href="../css/followings_styles.css">
+  <link rel="stylesheet" href="../css/followings.css">
 </head>
 
 <body>
-  <!-- 상단바 -->
-  <div class="mobile-navbar">
-    <img src="../assets/images/hotcake.png" alt="HotCake Icon" class="hotcake-icon">
-    <span class="hotcake-text">팔로잉</span>
-  </div>
+  <div class="wrap">
+    <!-- Begin header -->
+    <header>
+      <!-- 상단바 -->
+      <div class="navbar">
+        <h1 class="page-logo">
+          <a href="./index.html" class="link-container">
+            <img src="../assets/images/hotcake.png" alt="HotCake Icon" class="hotcake-logo">
+            <span>핫케이크</span>
+          </a>
+        </h1>
+        <div class="user-profile">
+          <a href="./edit_user.html">
+            <div class="user-img"></div>
+            <span class="user-nickname">닉네임</span>
+          </a>
+        </div>
+      </div>
+    </header>
+    <!-- End header -->
 
-  <!-- 팔로잉 검색 -->
-  <main>
-    <div class="gray-rectangle">
-      <img src="../assets/images/search.png" alt="Search" class="search-icon" id="searchIcon">
-    </div>
-  </main>
+    <!-- Begin main -->
+    <main>
+      <!-- 팔로잉 검색 -->
+      <div class="gray-rectangle">
+        <img src="../assets/images/search.png" alt="Search" class="search-icon" id="searchIcon">
+      </div>
 
-  <!-- 팔로잉하는 사용자, 이름, 팔로우 버튼 -->
-  <div class="flex-container">
-    <div class="set">
-      <div class="followings-image-circle"></div>
-      <p class="followings-name">냐옹이</p>
-      <button class="shared-button followings-button">팔로우중</button>
-    </div>
+      <!-- 팔로잉하는 사용자, 이름, 팔로우 버튼 -->
+      <div class="flex-container">
+        <div class="set">
+          <div class="followings-image-circle"></div>
+          <p class="followings-name">냐옹이</p>
+          <button class="shared-button followings-button">팔로우중</button>
+        </div>
 
 
-    <!-- 그다음 팔로잉.. -->
-    <div class="set">
-      <div class="followings-image-circle"></div>
-      <p class="followings-name">멍멍이</p>
-      <button class="shared-button followings-button">팔로우중</button>
-    </div>
+        <!-- 그다음 팔로잉.. -->
+        <div class="set">
+          <div class="followings-image-circle"></div>
+          <p class="followings-name">멍멍이</p>
+          <button class="shared-button followings-button">팔로우중</button>
+        </div>
+      </div>
+    </main>
+    <!-- End main -->
+
+
+    <!-- Begin footer -->
+    <footer>
+      <div class="container">
+        <div class="page-desc">
+          <p>©2023 Tanghuru All rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+    <!-- End footer -->
   </div>
 
   <script src="../js/scripts.js"></script>

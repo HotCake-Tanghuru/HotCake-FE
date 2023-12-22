@@ -1,4 +1,3 @@
-
 /* user 아이콘 스타일 */
 .user-icon {
   width: 30px;
@@ -6,15 +5,6 @@
   margin-top: -333px;
   position: absolute;
   left: 160px; 
-  z-index: 1;
-}
-
-/* hotcake 아이콘 스타일 */
-.hotcake-icon {
-  width: 30px;
-  margin-top: -333px;
-  position: absolute;
-  right: 160px;
   z-index: 1;
 }
 

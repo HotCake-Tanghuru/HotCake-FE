@@ -1,55 +1,181 @@
+/* ========= reset css ========= */
+/* box-sizing 규칙을 명시합니다. */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
+/* 폰트 크기의 팽창을 방지합니다. */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* 기본 여백을 제거하여 작성된 CSS를 더 잘 제어할 수 있습니다. */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* list를 role값으로 갖는 ul, ol 요소의 기본 목록 스타일을 제거합니다. */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* 핵심 body의 기본값을 설정합니다. */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+/* 제목 요소와 상호작용하는 요소에 대해 line-height를 더 짧게 설정합니다. */
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
+  line-height: 1.1;
+}
+
+/* 제목에 대한 text-wrap을 balance로 설정합니다. */
+h1,
+h2,
+h3,
+h4 {
+  text-wrap: balance;
+}
+
+/* 클래스가 없는 기본 a 태그 요소는 기본 스타일을 가져옵니다. */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* 이미지 관련 작업을 더 쉽게 합니다. */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* input 및 button 항목들이 글꼴을 상속하도록 합니다. */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 행 속성이 없는 textarea가 너무 작지 않도록 합니다. */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* 고정된 모든 항목에는 여분의 스크롤 여백이 있어야 합니다. */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+/* ========= font ========= */
 @font-face {
-    font-family: 'Ownglyph RDO ballpen'; 
-    src: url('../assets/fonts/Ownglyph_RDO_ballpen-Rg.woff2') format('woff2'),
-      url('../assets/fonts/Ownglyph_RDO_ballpen-Rg.woff') format('woff');
-  
-  }
-  
-  /* 기본 스타일 */
-  body {
-    background-color: white;
-    font-family: 'Ownglyph RDO ballpen'; 
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative; /* 가상 요소의 위치를 정하기 위해 상대적으로 설정 */
-    height: 100vh; /* 화면 높이를 전체로 채우기 위해 설정 */
-  }
-  
-  /* 가상 요소를 사용한 배경 색상 및 위치 조정 */
-  body::before {
-    content: '';
-    position: absolute;
-    top: 10%; /* 화면 위쪽에서 10% 지점에 배치 */
-    left: 50%;
-    transform: translateX(-50%) scale(1.2); /* 비율 유지하면서 확대 */
-    width: 320px; /* 원하는 모바일 화면 가로 크기 */
-    height: 568px; /* 원하는 모바일 화면 세로 크기 */
-    background-color: #F1EEDF; /* 모바일 화면 전체 배경 색상 설정 */
-    z-index: -1; /* body 내의 다른 요소 위에 위치하도록 설정 */
-  }
-  
-  /* 모바일 상단 바에 해당하는 부분에만 배경 색상 변경 */
-  body::after {
-    content: '';
-    position: absolute;
-    top: 3%; /* 화면 상단에 배치 */
-    left: 50%;
-    transform: translateX(-50%) scale(1.2); 
-    width: 320px; /* 모바일 화면 가로 크기와 동일하게 설정 */
-    height: 5%; /* 모바일 상단 바 사이즈 */
-    background-color: #F5F2E9; /* 모바일 상단 바 배경 색상 설정 */
-  
-  }
-  
-  .mobile-navbar {
-    position: absolute;
-    height: 50px;
-    background-color: #F1EEDF;
-    display: flex;
-    align-items: flex-start; /* 아이콘이 상단에 정렬되도록 설정 */
-    padding-right: 20px; /* 아이콘이 오른쪽과의 간격을 조절하기 위해 */
-    margin-top: 20px; /* 상단 여백을 추가하여 아이콘이 위로 올라가도록 설정 */
-  }
+  font-family: 'Ownglyph RDO ballpen';
+  src: url('../assets/fonts/Ownglyph_RDO_ballpen-Rg.woff2') format('woff2'),
+    url('../assets/fonts/Ownglyph_RDO_ballpen-Rg.woff') format('woff');
+}
+
+/* ========= color ========= */
+:root {
+  --coffee-brown: #605143;
+  --almond: #BC9982;
+  --gold: #F9DF98;
+  --cream: #F1EEDF;
+  --light-beige: #F5F2E9;
+  --gray: #D9D9D9;
+  --red: #D7433A;
+}
+
+/* 기본 스타일 */
+body {
+  font-family: 'Ownglyph RDO ballpen', sans-serif;
+  color: var(--coffee-brown, #9E7959);
+  background-color: #c4ad97;
+  display: flex;
+  justify-content: center;
+}
+
+.wrap {
+  min-height: 100vh;
+  background-color: var(--cream, #F1EEDF);
+  width: calc(100vh * 0.75);
+}
+
+header {
+  min-height: 5%;
+  padding: 0.25rem 0;
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--light-beige, #F5F2E9);
+}
+
+.navbar {
+  width: 100%;
+  margin: 0 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar .link-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+
+.navbar .link-container .hotcake-logo {
+  width: 2rem;
+}
+
+.navbar .link-container span {
+  font-size: 1.5rem;
+  font-weight: normal;
+  color: #9E7959;
+}
+
+.navbar .user-profile > a {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+
+.navbar .user-profile .user-img {
+  width: 2rem;
+  height: 2rem;
+  border: 2px solid #9E7959;
+  border-radius: 50%;
+  background: white url('profile.jpg') center/cover no-repeat;
+}
+
+.navbar .user-profile .user-nickname {
+  color: #9E7959;
+}
+
+.navbar .user-profile .user-nickname:hover {
+  text-decoration: underline;
+}
