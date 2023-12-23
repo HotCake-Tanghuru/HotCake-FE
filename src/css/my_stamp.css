@@ -2,33 +2,23 @@
 .stamp-text {
   font-size: 24px;
   width: 70px;
-  margin-top: -333px;
-  position: absolute;
-  right: 80px;
-  z-index: 1;
 }
 
 .my-stamp-text {
   font-size: 30px;
   width: 120px;
-  position: absolute;
-  margin-top: -550px;
-  margin-right: 200px;
 }
 
 .hotcake-stamp-icon {
   width: 40px;
   height: 40px;
-  position: absolute;
-  margin-top: -540px;
-  margin-right: 100px;
 }
 
 .masking-tape {
-  width: 230px;
   height: 180px;
-  position: fixed;
-  margin-top: -210px;
+  position: absolute;
+  left: 32%;
+  top: 10%;
   z-index: 1;
 }
 
@@ -41,7 +31,11 @@
   text-align: center;
   line-height: 30px;
   border: 3px solid #BC9982;
-  position: absolute;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
 }
 
 
@@ -51,67 +45,6 @@
   background-color: var(--coffee-brown, #D9D9D9);
   ;
   border-radius: 50%;
-  position: absolute;
-}
-
-.stamp-circle:nth-child(1) {
-  top: 30px;
-  left: 33px;
-}
-
-.stamp-circle:nth-child(2) {
-  top: 30px;
-  left: 133px;
-}
-
-.stamp-circle:nth-child(3) {
-  top: 30px;
-  left: 233px;
-}
-
-.stamp-circle:nth-child(4) {
-  top: 130px;
-  left: 33px;
-}
-
-.stamp-circle:nth-child(5) {
-  top: 130px;
-  left: 133px;
-}
-
-.stamp-circle:nth-child(6) {
-  top: 130px;
-  left: 233px;
-}
-
-.stamp-circle:nth-child(7) {
-  top: 230px;
-  left: 33px;
-}
-
-.stamp-circle:nth-child(8) {
-  top: 230px;
-  left: 133px;
-}
-
-.stamp-circle:nth-child(9) {
-  top: 230px;
-  left: 233px;
-}
-
-.stamp-circle:nth-child(10) {
-  top: 330px;
-  left: 33px;
-}
-
-.stamp-circle:nth-child(11) {
-  top: 330px;
-  left: 133px;
-}
-
-.stamp-circle:nth-child(12) {
-  top: 330px;
-  left: 233px;
 }
 
 .stamp-share-button {
@@ -126,17 +59,11 @@
   padding: 10px 20px;
   cursor: pointer;
   border-radius: 35px;
-  font-family: 'Ownglyph RDO ballpen';
-  position: absolute;
-  margin-top: 520px;
 }
 
 .share-icon {
   width: 20px;
   height: 20px;
-  position: absolute;
-  margin-top: 520px;
-  margin-left: -130px;
 }
 
 /* ---- */

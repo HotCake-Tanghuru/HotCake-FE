@@ -33,27 +33,31 @@
 
     <!-- Begin main -->
     <main>
-      <!-- 프로필 사진 수정 -->
-      <div class="dotted-rectangle">
-        <div class="button-container">
-          <label for="file-input" class="upload-button">+</label>
-          <input type="file" id="file-input" style="display: none;" />
-        </div>
+      <div class="content-container">
+        <form action="" class="edit-file">
+          <!-- 프로필 사진 수정 -->
+          <div class="image-upload-button">
+            <label for="file-input">+</label>
+            <input id="file-input" type="file" />
+          </div>
+        </form>
+        <form action="" class="edit-text">
+          <!-- 닉네임 수정 상자 -->
+          <div class="edit-nickname">
+            <label for="nickname">닉네임</label>
+            <input type="text" name="nickname" id="nickname" class="text-box" required>
+          </div>
+          <!-- 자기소개 수정 상자 -->
+          <div class="edit-intro">
+            <label for="intro">자기소개</label>
+            <textarea name="intro" id="intro" cols="30" rows="10" class="intro-box"></textarea>
+          </div>
+          <!-- 수정 완료시 누르는 수정하기 버튼 -->
+          <div class="edit-success-button">
+            <button class="btn" onclick="editSuccess()">수정하기</button>
+          </div>
+        </form>
       </div>
-
-      <!-- 닉네임 수정 상자 -->
-      <div class="edit-nickname">
-        <p>닉네임</p>
-        <div class="edit-rectangle"></div>
-      </div>
-
-      <!-- 자기소개 수정 상자 -->
-      <div class="intro">
-        <p>자기소개</p>
-        <div class="intro-rectangle"></div>
-      </div>
-      <!-- 수정 완료시 누르는 수정하기 버튼 -->
-      <button class="edit-success-button" onclick="editSuccess()">수정하기</button>
     </main>
     <!-- End main -->
 
