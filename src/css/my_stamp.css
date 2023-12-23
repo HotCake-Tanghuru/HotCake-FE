@@ -1,69 +1,66 @@
-/* 스탬프 텍스트 스타일 */
-.stamp-text {
-  font-size: 24px;
-  width: 70px;
+section {
+  text-align: center;
 }
 
-.my-stamp-text {
-  font-size: 30px;
-  width: 120px;
+.my-stamp {
+  font-size: 2rem;
+  font-weight: normal;
+  margin-bottom: 0.5rem;
 }
 
-.hotcake-stamp-icon {
-  width: 40px;
-  height: 40px;
-}
-
-.masking-tape {
-  height: 180px;
-  position: absolute;
-  left: 32%;
-  top: 10%;
-  z-index: 1;
+.my-stamp>img {
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  margin-left: 0.5rem;
 }
 
 /* 스탬프 배경 */
-.rectangle-box-container {
-  width: 320px;
-  height: 430px;
+.stamp-container {
+  width: 70%;
+  min-width: 241px;
+  max-width: 340px;
   background-color: white;
-  color: brown;
   text-align: center;
-  line-height: 30px;
   border: 3px solid #BC9982;
+  margin: 0 auto 1rem;
+  padding: 1rem;
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 1.25rem;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
 }
 
-
-.stamp-circle {
-  width: 55px;
-  height: 55px;
-  background-color: var(--coffee-brown, #D9D9D9);
-  ;
+.stamp .stamp-hole {
+  width: 3rem;
+  height: 3rem;
+  background-color: var(--gray, #D9D9D9);
   border-radius: 50%;
+}
+
+.stamp.stamped .stamp-hole {
+  /* background-color: var(--red, #d7433a); */
+  background-image: url('../assets/images/hotcakestamp.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.stamp .stamp-date {
+  font-size: 0.75rem;
+  font-weight: normal;
+  color: var(--almond, #BC9982);
 }
 
 .stamp-share-button {
   width: 200px;
-  background-color: var(--coffee-brown, #F9DF98);
-  ;
-  border: none;
-  color: brown;
-  text-align: center;
-  display: inline-block;
-  font-size: 20px;
-  padding: 10px 20px;
-  cursor: pointer;
-  border-radius: 35px;
 }
 
-.share-icon {
-  width: 20px;
-  height: 20px;
+.stamp-share-button>svg {
+  display: inline;
+  width: 1rem;
+  height: 1rem;
 }
 
 /* ---- */
