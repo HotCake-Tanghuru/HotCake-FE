@@ -1,62 +1,74 @@
-.image-container {
-  height: calc(100% * 0.2);
-}
-
-/* 어두운 효과 */
-.darken-image  {
+.trend {
+  position: relative;
   width: 100%;
+  height: calc(100% * 20%);
+  max-height: 400px;
+}
+
+.trend img {
   display: block;
-  filter: brightness(50%); 
+  width: 100%;
+  height: calc(100% * 20%);
+  max-height: 400px;
 }
 
-/* 텍스트 오버레이 */
-.text-overlay {
-  width: 300px;
+.dim {
   position: absolute;
-  top: 18%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  color: white;
-  font-size: 30px;
-  opacity: 0.8; 
-}
-
-/* 호버 효과 */
-a:hover .image-container img {
-  filter: brightness(100%);
-}
-
-.trendy-friends{
-  font-size: 24px;
-}
-
-.user1-info p {
-  margin-bottom: 5px;
-  font-size: 20px;
-}
-
-.user1-photos {
+  bottom: 0;
+  padding: 1em;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  color: #fff;
+  background-color: rgba(0, 0, 0, .5);
   display: flex;
-  justify-content: center; 
-  margin-top: 10px; 
+  justify-content: center;
+  align-items: center;
 }
 
-.user1-photos img {
-  margin: 0 5px; 
+.dim strong {
+  color: #fff;
+  font-size: 2em;
+  font-weight: bold;
+  text-decoration: none;
 }
 
-.user2-info p {
-  margin-bottom: 5px;
-  font-size: 20px;
+.dim strong:hover {
+  text-decoration: underline;
 }
 
-.user2-photos {
+.trendy-friends {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  font-weight: normal;
+}
+
+.trend-posts {
   display: flex;
-  justify-content: center; 
-  margin-top: 10px; 
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+
 }
 
-.user2-photos img {
-  margin: 0 5px; 
+.trend-post>.trend-user {
+  margin-bottom: 0.5rem;
+  font-weight: normal;
+}
+
+.trend-user strong {
+  font-size: 1.5rem;
+}
+
+.trend-photos {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  gap: 0.5rem;
+}
+
+.trend-photos img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
 }
