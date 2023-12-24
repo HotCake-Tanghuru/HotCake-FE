@@ -1,73 +1,78 @@
-/* hotcake 텍스트 스타일 */
-.hotcake-text {
+/* hotcake 아이콘 스타일 */
+.hotcake-icon {
+    width: 30px;
+    margin-top: -333px;
+    position: absolute;
+    right: 160px;
+    z-index: 1;
+  }
+  
+  /* hotcake 텍스트 스타일 */
+  .hotcake-text {
     font-size: 24px;
     width: 80px;
     margin-top: -333px;
     position: absolute;
-    right: 70px;
+    right: 70px; 
     z-index: 1;
   }
-  
-  .gray-rectangle {
+
+.gray-rectangle {
     width: 300px;
     height: 40px;
     border-radius: 20px;
     background-color: #ccc;
     position: absolute;
-    top: 80px;
+    top: 80px; 
     left: 50%;
     transform: translateX(-50%);
     display: flex;
     align-items: center;
     justify-content: flex-end;
-  }
-  
-  .search-icon {
+}
+
+.search-icon {
     width: 30px;
     height: 30px;
     cursor: pointer;
     margin-right: 15px;
-  }
-  
-  .flex-container {
+}
+
+.flex-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: column; 
     align-items: center;
     gap: 20px;
     position: absolute;
     top: 150px;
-  }
-  
-  .set {
+}
+
+.set {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
-  }
-  
-  
-  .followers-image-circle {
+}
+
+
+.followings-image-circle {
     width: 50px;
     height: 50px;
     border-radius: 50%;
     background-color: #ccc;
-  }
-  
-  .followers-name {
+}
+
+.followings-name {
     width: 100px;
     font-size: 22px;
-    margin: 0;
-    white-space: nowrap;
-    /* 텍스트가 한 줄로만 표시되도록 설정 */
-    overflow: hidden;
-    /* 내용이 넘칠 때 잘린 부분을 숨김 */
-    text-overflow: ellipsis;
-    /* 텍스트가 잘리면 생략 부호(...)로 표시 */
-  }
-  
-  .shared-button {
-    background-color: var(--coffee-brown, #F9DF98);
-    ;
+    margin: 0; 
+    white-space: nowrap; /* 텍스트가 한 줄로만 표시되도록 설정 */
+    overflow: hidden;  /* 내용이 넘칠 때 잘린 부분을 숨김 */
+    text-overflow: ellipsis;  /* 텍스트가 잘리면 생략 부호(...)로 표시 */
+}
+
+.shared-button {
+    background-color: #F9DF98;
     border: none;
     color: brown;
     text-align: center;
@@ -76,5 +81,5 @@
     padding: 10px 20px;
     cursor: pointer;
     border-radius: 20px;
-    font-family: 'Ownglyph RDO ballpen';
-  }
+    font-family: 'Ownglyph RDO ballpen'; 
+}
