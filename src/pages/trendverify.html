@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+  <meta charset="UTF-8">
+  <title>User Page</title>
+  <link rel="stylesheet" href="../css/common.css">
+  <link rel="stylesheet" href="../css/trend_verify.css">
+</head>
+
+<body>
+  <div class="wrap">
+    <!-- Begin header -->
+    <header>
+      <!-- 상단바 -->
+      <div class="navbar">
+        <h1 class="page-logo">
+          <a href="./index.html" class="link-container">
+            <img src="../assets/images/hotcake.png" alt="HotCake Icon" class="hotcake-logo">
+            <span>트렌드 인증</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <!-- End header -->
+
+
+    <!-- Begin main -->
+    <main>
+      <h1 class="center">📌 겨울 여행지 LIST</h1>
+
+      <form action="" class="edit-file">
+        <div class="button-row">
+          <!-- 첫 번째 이미지 업로드 버튼 -->
+          <div class="image-upload-button">
+            <label for="file-input-1">+</label>
+            <input id="file-input-1" type="file" />
+          </div>
+
+          <!-- 두 번째 이미지 업로드 버튼 -->
+          <div class="image-upload-button">
+            <label for="file-input-2">+</label>
+            <input id="file-input-2" type="file" />
+          </div>
+        </div>
+
+        <!-- 세 번째 이미지 업로드 버튼 -->
+        <div class="image-upload-button">
+          <label for="file-input-3">+</label>
+          <input id="file-input-3" type="file" />
+        </div>
+      </form>
+
+
+      <!-- 공유하기 버튼 -->
+      <div class="trend-share-button">
+        <button class="btn" onclick="trendShare()">공유하기</button>
+
+      </div>
+
+      <!-- 좋아요, 조회수, 댓글 개수 -->
+      <div class="info-icons">
+        <span class="icon heart"></span>
+        <span>조회수</span>
+        <span class="icon eye"></span>
+        <span>좋아요수</span>
+        <span class="icon comment"></span>
+        <span>댓글수</span>
+      </div>
+
+      <!-- 댓글 입력 창 -->
+      <div class="comment-section">
+        <div class="background-rectangle"></div>
+        <div class="comment-box">
+          <textarea placeholder="댓글을 입력하세요..."></textarea>
+          <div class="comment-buttons">
+            <button class="btn edit-button">수정</button>
+            <button class="btn delete-button">삭제</button>
+          </div>
+        </div>
+        <div class="comment-display">
+          <!-- 댓글 js-->
+        </div>
+      </div>
+
+      <!-- 댓글 보기 -->
+      <div class="comments-section">
+        <div class="comment">
+          <div class="user-comment">
+            <span class="user-name">User1</span>
+            <span>오 이번에 갔다 왔구나~</span>
+          </div>
+          <div class="sub-comments">
+            <div class="sub-comment">
+              <span class="user-name">User2</span>
+              <span>└ 맞아요 ~ㅎㅎ</span>
+            </div>
+          </div>
+        </div>
+    </main>
+    <!-- End main -->
+
+
+    <!-- Begin footer -->
+    <footer>
+      <div class="container">
+        <div class="page-desc">
+          <p>©2023 Tanghuru All rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+    <!-- End footer -->
+  </div>
+
+  <script src="../js/scripts.js"></script>
+  <script>
+    function trendShare() {
+
+
+    }
+  </script>
+</body>
+
+</html>

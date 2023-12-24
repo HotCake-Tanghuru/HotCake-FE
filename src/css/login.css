@@ -1,0 +1,49 @@
+.login-image {
+  background: url('../assets/images/hotcake.png') no-repeat;
+  background-size: contain;
+  width: 350px;
+  height: 300px;
+  margin: 5rem auto 0; 
+}
+
+.image-description {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.description h2{
+  font-size: 68px; 
+  margin: 10px 0; 
+}
+
+.description p {
+  font-size: 30px; 
+  margin: 10px 0;
+}
+
+.login-with-kakao {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.kakao-login-btn {
+  padding: 15px 40px;
+  background-color: #ffe812;
+  color: #3c1e1e;
+  border: none;
+  border-radius: 30px;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-bottom: 2rem;
+}
+
+.kakao-login-btn:hover {
+  background-color: #ffeb3b;
+}
+
