@@ -1,0 +1,73 @@
+.profile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.profile .profile-image {
+  background-color: #F9DF98;
+  border-right: 0.75rem solid #9E7959;
+  border-top: 0.875rem solid #9E7959;
+  border-radius: 20%;
+  min-width: 100px;
+  width: 30%;
+  height: 100px;
+  background-image: url('../assets/images/profile.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  mask-image: url('../assets/images/bread.png');
+  mask-position: center;
+  mask-size: contain;
+  mask-repeat: no-repeat;
+}
+
+.profile .profile-info {
+  min-width: 50%;
+}
+
+.edit-button {
+  width: 100%;
+}
+
+.nickname-box {
+  background-color: var(--light-beige, #F5F2E9);
+  text-align: center;
+  border: 2px solid var(--gold, #F9DF98);
+  border-radius: 1rem;
+}
+
+.follow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 2rem;
+}
+
+.intro-box {
+  width: 100%;
+  height: 120px;
+  background-color: var(--almond, #BC9982);
+  color: #F1EEDF;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.stamp-button {
+  margin-bottom: 1rem;
+}
+
+.list-container a {
+  color: #9E7959;
+  font-size: 26px;
+  display: block;
+  line-height: 1.5;
+  padding-bottom: 20px;
+}
+
+.list-container a:hover {
+  text-decoration: underline;
+}
