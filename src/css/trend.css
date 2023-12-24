@@ -1,0 +1,88 @@
+.reaction-container {
+  display: flex;
+  flex-direction: row; 
+  justify-content: flex-end; 
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.like-view, .view-view {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.like-image,
+.view-image {
+  width: 30px;
+  height: 30px;
+  background-size: cover;
+}
+
+.like-image {
+  background-image: url('../assets/images/heart.png');
+}
+
+.view-image {
+  background-image: url('../assets/images/eye.png');
+}
+
+#likeCount,
+#viewCount {
+  display: inline-block;
+  font-size: 16px;
+  margin-left: 5px;
+}
+
+.thumbnail-1 {
+  background-image: url('../assets/images/muju.png');
+}
+
+.thumbnail-2 {
+  background-image: url('../assets/images/deokyu.png');
+}
+
+.thumbnail-3 {
+  background-image: url('../assets/images/alpes.png');
+}
+
+.thumbnail-1,
+.thumbnail-2, 
+.thumbnail-3{
+  width: 120px;
+  height: 120px;
+}
+
+.trends-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  margin-top: 2rem;
+  font-size: 22px;
+}
+
+.image-description {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.trend-authentication-button{
+  width: 40%;
+  margin: 0 auto;
+  margin-top: 2rem;
+  font-size: 20px;
+}
+
+.trend-authentication-button>button {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.user-selection label {
+  display: inline-block;
+  margin-right: 10px; 
+  margin-bottom: 2rem;
+  font-size: 24px;
+}

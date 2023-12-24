@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+  <meta charset="UTF-8">
+  <title>User Page</title>
+  <link rel="stylesheet" href="../css/common.css">
+  <link rel="stylesheet" href="../css/trend.css">
+</head>
+
+<body>
+  <div class="wrap">
+    <!-- Begin header -->
+    <header>
+      <!-- 상단바 -->
+      <div class="navbar">
+        <h1 class="page-logo">
+          <a href="./index.html" class="link-container">
+            <img src="../assets/images/hotcake.png" alt="HotCake Icon" class="hotcake-logo">
+            <span>겨울 여행지</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <!-- End header -->
+
+
+    <!-- Begin main -->
+    <main>
+      <div class="reaction-container">
+        <!-- 좋아요 -->
+        <div class="like-view">
+            <div class="like-image"></div>
+            <span id="likeCount">0</span>
+        </div>
+
+        <!-- 조회수 -->
+        <div class="view-view">
+            <div class="view-image"></div>
+            <span id="viewCount">0</span>
+        </div>
+        </div>
+
+        <div class="trends-container">
+          <!-- 첫 번째 이미지 및 설명 -->
+          <div class="image-description">
+            <div class="thumbnail-1"></div>
+            <div class="description">
+              <h2>무주 스키장</h2>
+              <p>겨울엔 역시 스키장이지 ! <br> 📍전라북도 무주군</p>
+            </div>
+          </div>
+
+          <!-- 두 번째 이미지 및 설명 -->
+          <div class="image-description">
+            <div class="thumbnail-2"></div>
+            <div class="description">
+              <h2>덕유산</h2>
+              <p>산의 설경에 빠져볼 시간 <br> 📍전라북도 무주군</p>
+            </div>
+          </div>
+
+          <!-- 세 번째 이미지 및 설명 -->
+          <div class="image-description">
+            <div class="thumbnail-3"></div>
+            <div class="description">
+              <h2>알프스마을</h2>
+              <p>겨울 축제를 즐겨봐요 <br> 📍충청남도 청양군</p>
+            </div>
+          </div>
+        </div>
+    
+        <!-- 해당 트렌드 가져와서 인증하기 버튼 -->
+        <div class="trend-authentication-button">
+          <button class="btn" onclick="handleTrendAuthentication()">해당 트렌드 <br> 가져와서 인증 하기</button>
+          <script>
+            function handleTrendAuthentication() {
+
+              window.location.href = 'trendverify.html';
+            }
+          </script>
+        </div>
+
+        <!-- 현재 트렌드한 친구들 모아보기 -->
+        <div class="trend-users">
+          <h2 style="text-align: center;">현재 트렌드한 친구들 👥</h2>
+          
+          <div class="user-selection-container" style="text-align: center;">
+            <form class="user-selection" style="display: inline-block;">
+              <label>
+                <input type="radio" name="user" value="user1">
+                User 1
+              </label>
+              <label>
+                <input type="radio" name="user" value="user2">
+                User 2
+              </label>
+              <label>
+                <input type="radio" name="user" value="user3">
+                User 3
+              </label>
+            </form>
+          </div>
+        </div>
+    </main>
+    <!-- End main -->
+
+
+    <!-- Begin footer -->
+    <footer>
+      <div class="container">
+        <div class="page-desc">
+          <p>©2023 Tanghuru All rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+    <!-- End footer -->
+  </div>
+
+  <script src="../js/scripts.js"></script>
+</body>
+
+</html>

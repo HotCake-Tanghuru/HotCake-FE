@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+  <meta charset="UTF-8">
+  <title>User Page</title>
+  <link rel="stylesheet" href="../css/common.css">
+  <link rel="stylesheet" href="../css/shot.css">
+</head>
+
+<body>
+  <div class="wrap">
+    <header>
+      <div class="navbar">
+        <h1 class="page-logo">
+          <a href="./index.html" class="link-container">
+            <img src="../assets/images/hotcake.png" alt="HotCake Icon" class="hotcake-logo">
+            <span>인증샷 상세보기</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+
+    <main>
+      <h1 class="center">📌 인증샷 상세보기</h1>
+
+      <!-- 이미지 업로드 -->
+      <div class="image-description">
+        <div class="skiing-image"></div>
+        <div class="description">
+        </div>
+      </div>
+
+      <!-- 이미지 내용 설명 -->
+      <div class="comment-box">
+        <div class="comment">
+          <p>여기 짱 좋았다~👍</p>
+        </div>
+      </div>
+
+      <!-- 인증샷 수정 버튼 -->
+      <div class="shot-edit-button">
+        <button class="btn" onclick="shotEdit()">수정</button>
+        <script>
+          function shotEdit() {
+
+            window.location.href = ' edit_shot.html';
+          }
+        </script>
+      </div>
+    </main>
+
+    <footer>
+      <div class="container">
+        <div class="page-desc">
+          <p>©2023 Tanghuru All rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="../js/scripts.js"></script>
+</body>
+
+</html>
