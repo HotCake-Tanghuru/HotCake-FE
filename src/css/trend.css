@@ -1,57 +1,28 @@
 .reaction-container {
   display: flex;
-  flex-direction: row;
   justify-content: flex-end;
   gap: 1rem;
-  margin-bottom: 1rem;
+  margin: 0.5rem 0;
 }
 
-.like-view,
-.view-view {
+.likes .like-button {
+  width: 1.5rem;
+  height: 1.5rem;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.likes .like-button svg {
+  width: 100%;
+}
+
+.likes,
+.views {
   display: flex;
   align-items: center;
-  gap: 1rem;
-}
-
-.like-image,
-.view-image {
-  width: 30px;
-  height: 30px;
-  background-size: cover;
-}
-
-.like-image {
-  background-image: url('../assets/images/heart.png');
-}
-
-.view-image {
-  background-image: url('../assets/images/eye.png');
-}
-
-#likeCount,
-#viewCount {
-  display: inline-block;
-  font-size: 16px;
-  margin-left: 5px;
-}
-
-.thumbnail-1 {
-  background-image: url('../assets/images/wintertravel1.png');
-}
-
-.thumbnail-2 {
-  background-image: url('../assets/images/wintertravel2.png');
-}
-
-.thumbnail-3 {
-  background-image: url('../assets/images/wintertravel3.png');
-}
-
-.thumbnail-1,
-.thumbnail-2,
-.thumbnail-3 {
-  width: 120px;
-  height: 120px;
+  gap: 0.5rem;
 }
 
 .trends-container {
@@ -63,27 +34,49 @@
   font-size: 22px;
 }
 
-.image-description {
+.trend-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.trend-item img {
+  /* flex: 1; */
+  width: 6.25rem;
+  height: 6.25rem;
+  object-fit: cover;
+}
+
+.trend-item .description {
+  flex: 1;
+}
+
+.participant-info {
   display: flex;
   align-items: center;
   gap: 1rem;
+  margin-top: 0.5rem;
 }
 
-.trend-authentication-button {
-  width: 40%;
-  margin: 0 auto;
-  margin-top: 2rem;
-  font-size: 20px;
+.participant-info .profile-container {
+  display: flex;
+  align-items: center;
 }
 
-.trend-authentication-button>button {
-  width: 100%;
-  margin-bottom: 1rem;
+.participant-info .profile-container .profile-img {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
 }
 
-.user-selection label {
-  display: inline-block;
-  margin-right: 10px;
-  margin-bottom: 2rem;
-  font-size: 24px;
+.participant-info .profile-container .profile-img:nth-child(n+2) {
+  margin-left: -12px;
+}
+
+.trend-join-btn {
+  display: block;
+  margin: 1rem auto;
 }

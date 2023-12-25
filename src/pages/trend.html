@@ -17,9 +17,15 @@
         <h1 class="page-logo">
           <a href="./index.html" class="link-container">
             <img src="../assets/images/hotcake.png" alt="HotCake Icon" class="hotcake-logo">
-            <span>겨울 여행지</span>
+            <span>핫케이크</span>
           </a>
         </h1>
+        <div class="user-profile">
+          <a href="./user.html">
+            <div class="user-img"></div>
+            <span class="user-nickname">닉네임</span>
+          </a>
+        </div>
       </div>
     </header>
     <!-- End header -->
@@ -27,81 +33,80 @@
 
     <!-- Begin main -->
     <main>
-      <div class="reaction-container">
-        <!-- 좋아요 -->
-        <div class="like-view">
-            <div class="like-image"></div>
-            <span id="likeCount">0</span>
-        </div>
-
-        <!-- 조회수 -->
-        <div class="view-view">
-            <div class="view-image"></div>
+      <div class="content-container">
+        <h2>❄️겨울 여행지 추천❄️</h2>
+        <div class="reaction-container">
+          <!-- 조회수 -->
+          <div class="views">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="15" viewBox="0 0 22 15" fill="none">
+              <path
+                d="M11 12C12.25 12 13.3125 11.5625 14.1875 10.6875C15.0625 9.8125 15.5 8.75 15.5 7.5C15.5 6.25 15.0625 5.1875 14.1875 4.3125C13.3125 3.4375 12.25 3 11 3C9.75 3 8.6875 3.4375 7.8125 4.3125C6.9375 5.1875 6.5 6.25 6.5 7.5C6.5 8.75 6.9375 9.8125 7.8125 10.6875C8.6875 11.5625 9.75 12 11 12ZM11 10.2C10.25 10.2 9.6125 9.9375 9.0875 9.4125C8.5625 8.8875 8.3 8.25 8.3 7.5C8.3 6.75 8.5625 6.1125 9.0875 5.5875C9.6125 5.0625 10.25 4.8 11 4.8C11.75 4.8 12.3875 5.0625 12.9125 5.5875C13.4375 6.1125 13.7 6.75 13.7 7.5C13.7 8.25 13.4375 8.8875 12.9125 9.4125C12.3875 9.9375 11.75 10.2 11 10.2ZM11 15C8.56667 15 6.35 14.3208 4.35 12.9625C2.35 11.6042 0.9 9.78333 0 7.5C0.9 5.21667 2.35 3.39583 4.35 2.0375C6.35 0.679167 8.56667 0 11 0C13.4333 0 15.65 0.679167 17.65 2.0375C19.65 3.39583 21.1 5.21667 22 7.5C21.1 9.78333 19.65 11.6042 17.65 12.9625C15.65 14.3208 13.4333 15 11 15Z"
+                fill="#9E7959" />
+            </svg>
             <span id="viewCount">0</span>
-        </div>
+          </div>
+
+          <!-- 좋아요 -->
+          <div class="likes">
+            <button class="like-button">
+              <svg class="heart" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                <path
+                  d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+                </path>
+              </svg>
+            </button>
+            <span id="likeCount">0</span>
+          </div>
         </div>
 
-        <div class="trends-container">
-          <!-- 첫 번째 이미지 및 설명 -->
-          <div class="image-description">
-            <div class="thumbnail-1"></div>
+        <ul class="trend-items">
+          <!-- 첫 번째 아이템 -->
+          <li class="trend-item">
+            <img src="../assets/images/wintertravel1.png" alt="무주 스키장">
             <div class="description">
-              <h2>무주 스키장</h2>
-              <p>겨울엔 역시 스키장이지 ! <br> 📍전라북도 무주군</p>
+              <h3>무주 스키장</h3>
+              <p>
+                겨울엔 역시 스키장이지!<br>
+                📍전라북도 무주군
+              </p>
             </div>
-          </div>
-
-          <!-- 두 번째 이미지 및 설명 -->
-          <div class="image-description">
-            <div class="thumbnail-2"></div>
+          </li>
+          <!-- 두 번째 아이템 -->
+          <li class="trend-item">
+            <img src="../assets/images/winter.png" alt="무주 스키장">
             <div class="description">
-              <h2>덕유산</h2>
-              <p>산의 설경에 빠져볼 시간 <br> 📍전라북도 무주군</p>
+              <h3>덕유산</h3>
+              <p>
+                산의 설경에 빠져볼 시간<br>
+                📍전라북도 무주군
+              </p>
             </div>
-          </div>
-
-          <!-- 세 번째 이미지 및 설명 -->
-          <div class="image-description">
-            <div class="thumbnail-3"></div>
+          </li>
+          <!-- 세 번째 아이템 -->
+          <li class="trend-item">
+            <img src="../assets/images/wintertravel3.png" alt="무주 스키장">
             <div class="description">
-              <h2>알프스마을</h2>
-              <p>겨울 축제를 즐겨봐요 <br> 📍충청남도 청양군</p>
+              <h3>알프스마을</h3>
+              <p>
+                겨울 축제를 즐겨봐요<br>
+                📍충청남도 청양군
+              </p>
             </div>
+          </li>
+        </ul>
+        
+        <button class="btn trend-join-btn" onclick="handleTrendAuthentication()">나도 이 트렌드 참여하기</button>
+
+        <!-- 트렌드한 친구들 모아보기 -->
+        <div class="trending-users">
+          <h2>트렌드한 친구들 👥</h2>
+          <div class="participant-info">
+            <div class="profile-container" id="usersFrame"></div>
+            <p>현재 <span id="userCount">0</span>명이 참여중이예요</p>
           </div>
         </div>
-    
-        <!-- 해당 트렌드 가져와서 인증하기 버튼 -->
-        <div class="trend-authentication-button">
-          <button class="btn" onclick="handleTrendAuthentication()">해당 트렌드 <br> 가져와서 인증 하기</button>
-          <script>
-            function handleTrendAuthentication() {
-
-              window.location.href = 'trendverify.html';
-            }
-          </script>
-        </div>
-
-        <!-- 현재 트렌드한 친구들 모아보기 -->
-        <div class="trend-users">
-          <h2 style="text-align: center;">현재 트렌드한 친구들 👥</h2>
-          
-          <div class="user-selection-container" style="text-align: center;">
-            <form class="user-selection" style="display: inline-block;">
-              <label>
-                <input type="radio" name="user" value="user1">
-                User 1
-              </label>
-              <label>
-                <input type="radio" name="user" value="user2">
-                User 2
-              </label>
-              <label>
-                <input type="radio" name="user" value="user3">
-                User 3
-              </label>
-            </form>
-          </div>
-        </div>
+      </div>
     </main>
     <!-- End main -->
 
@@ -118,6 +123,7 @@
   </div>
 
   <script src="../js/scripts.js"></script>
+  <script src="../js/trend.js"></script>
 </body>
 
 </html>
