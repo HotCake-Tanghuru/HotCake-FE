@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <title>User Page</title>
   <link rel="stylesheet" href="../css/common.css">
-  <link rel="stylesheet" href="../css/shot.css">
+  <link rel="stylesheet" href="../css/trend_mission_detail.css">
 </head>
 
 <body>
@@ -30,29 +30,24 @@
     </header>
     <!-- End header -->
 
+
+    <!-- Begin main -->
     <main>
-      <h1 class="center">📌 인증샷 상세보기</h1>
-
-      <!-- 이미지 업로드 -->
-      <div class="image-description">
-        <div class="skiing-image"></div>
-        <div class="description">
+      <div class="content-container">
+        <div class="trend-mission-detail">
+          <h2>📌 <span class="mission-item">무주 스키장</span></h2>
+          <div class="mission-image"></div>
+          <div class="comment">
+            여기 짱 좋았다~👍
+          </div>
+          <button class="btn" id="trendMissionEditBtn" onclick="shotEdit()">수정</button>
         </div>
-      </div>
-
-      <!-- 수정 가능한 텍스트 박스 -->
-      <div class="comment-box">
-        <div class="comment">
-          <textarea rows="5" cols="40">여기 짱 좋았다~👍</textarea>
-        </div>
-      </div>
-
-      <!-- 인증샷 수정 버튼 -->
-      <div class="shot-edit-button">
-        <button class="btn" onclick="shotEditSucces()">수정하기</button>
       </div>
     </main>
+    <!-- End main -->
 
+
+    <!-- Begin footer -->
     <footer>
       <div class="container">
         <div class="page-desc">
@@ -60,9 +55,15 @@
         </div>
       </div>
     </footer>
+    <!-- End footer -->
   </div>
 
   <script src="../js/scripts.js"></script>
+  <script>
+    function shotEdit() {
+      window.location.href = ' edit_shot.html';
+    }
+  </script>
 </body>
 
 </html>
