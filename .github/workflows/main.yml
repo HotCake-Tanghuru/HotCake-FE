@@ -1,0 +1,30 @@
+name: Django CI/CD
+
+on:
+  push:
+    branches: [ "deploy" ]
+
+jobs:
+  upload:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Configure AWS credentials 
+      uses: aws-actions/configure-aws-credentials@v1 
+      with: 
+        aws-access-key-id: ${{ secrets.AWS_S3_ACCESS_KEY_ID }} 
+        aws-secret-access-key: ${{ secrets.AWS_S3_SECRET_ACCESS_KEY_ID }} 
+        aws-region: ap-northeast-2
+    - name: Upload files to S3
+      env:
+        BUCKET_NAME: ${{ secrets.AWS_S3_BUCKET_NAME}}
+      run: |
+        aws s3 cp --recursive --region ap-northeast-2 . s3://$BUCKET_NAME
+    - name: Upload files to CloudFront
+      env:
+        CLOUD_FRONT_ID: ${{ secrets.CLOUD_FRONT_ID}}
+      run: |
+        aws cloudfront create-invalidation \
+          --distribution-id $CLOUD_FRONT_ID --paths "/*"
