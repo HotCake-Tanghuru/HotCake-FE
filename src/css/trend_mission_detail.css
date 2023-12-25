@@ -1,0 +1,23 @@
+.trend-mission-detail{
+  text-align: center;
+}
+
+.mission-image {
+  width: 100%;
+  max-width: 600px;
+  height: calc(100vh * 0.5);
+  max-height: 600px;
+  background: black url(../assets/images/wintertravel1.png) center/contain no-repeat;
+  margin: 1rem auto;
+}
+
+.comment {
+  width: 100%;
+  max-width: 600px;
+  min-height: 100px;
+  background-color: var(--almond, #bc9982);
+  padding: 1rem;
+  margin: 0 auto 1rem;
+  border-radius: 0.5rem;
+  text-align:left;
+}
