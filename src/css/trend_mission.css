@@ -1,0 +1,121 @@
+h2 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.trend-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: space-evenly;
+  text-align: center;
+}
+
+.trend-items .trend-item a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.trend-items .trend-item .trend-item-image {
+  width: 8rem;
+  height: 8rem;
+  border: 1px solid var(--almond, #BC9982);
+  object-fit: contain;
+}
+
+.trend-items .trend-item .trend-item-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.get-stamp-btn {
+  display: block;
+  margin: 1rem auto;
+}
+
+.get-stamp-btn:disabled {
+  background-color: #eaeaea;
+  color: #999;
+}
+
+.reaction-container {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin: 0.5rem 0;
+}
+
+.likes,
+.views,
+.comments {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.likes .like-button {
+  width: 1.5rem;
+  height: 1.5rem;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.likes .like-button svg {
+  width: 100%;
+}
+
+.comment-box {
+  background-color: #F5F2E9;
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.25rem;
+  width: 100%;
+  text-align: right;
+  margin-bottom: 1rem;
+}
+
+.comment-box textarea {
+  width: 100%;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  resize: none;
+}
+
+.comment .comment-buttons {
+  text-align: right;
+}
+
+.comment .comment-buttons .edit-button,
+.comment .comment-buttons .delete-button {
+  background: none;
+  border: none;
+  text-decoration: underline;
+  cursor: pointer;
+  text-align: right;
+}
+
+.comment .user-name {
+  font-weight: bold;
+  margin-right: 0.25rem;
+}
+
+.comment .replys {
+  margin-left: 1rem;
+}
+
+.edit-form {
+  box-sizing: border-box;
+  text-align: right;
+}
+.edit-form textarea {
+  width: 100%;
+  height: 5rem;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  resize: none;
+}
