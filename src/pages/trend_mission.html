@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+  <meta charset="UTF-8">
+  <title>User Page</title>
+  <link rel="stylesheet" href="../css/common.css">
+  <link rel="stylesheet" href="../css/trend_mission.css">
+</head>
+
+<body>
+  <div class="wrap">
+    <!-- Begin header -->
+    <header>
+      <div class="navbar">
+        <h1 class="page-logo">
+          <a href="./index.html" class="link-container">
+            <img src="../assets/images/hotcake.png" alt="HotCake Icon" class="hotcake-logo">
+            <span>핫케이크</span>
+          </a>
+        </h1>
+        <div class="user-profile">
+          <a href="./user.html">
+            <div class="user-img"></div>
+            <span class="user-nickname">닉네임</span>
+          </a>
+        </div>
+      </div>
+    </header>
+    <!-- End header -->
+
+
+    <!-- Begin main -->
+    <main>
+      <div class="content-container">
+        <section>
+          <h2 class="trend-theme">❄️겨울 여행지 추천❄️</h2>
+          <ul class="trend-items">
+            <li class="trend-item">
+              <a href="./trend_mission_detail.html">
+                <div class="trend-item-image"></div>
+                <p>무주스키장</p>
+              </a>
+            </li>
+            <li class="trend-item">
+              <a href="./trend_mission_detail.html">
+                <div class="trend-item-image">
+                  <img src="../assets/images/skiing2.png" alt="">
+                </div>
+                <p>덕유산</p>
+              </a>
+            </li>
+            <li class="trend-item">
+              <a href="./trend_mission_detail.html">
+                <div class="trend-item-image">
+                  <img src="../assets/images/winter.png" alt="">
+                </div>
+                <p>알프스마을</p>
+              </a>
+            </li>
+          </ul>
+          <button class="btn get-stamp-btn" disabled>스탬프 받기<br>(완료)</button>
+
+          <div class="reaction-container">
+            <!-- 조회수 -->
+            <div class="views">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="15" viewBox="0 0 22 15" fill="none">
+                <path
+                  d="M11 12C12.25 12 13.3125 11.5625 14.1875 10.6875C15.0625 9.8125 15.5 8.75 15.5 7.5C15.5 6.25 15.0625 5.1875 14.1875 4.3125C13.3125 3.4375 12.25 3 11 3C9.75 3 8.6875 3.4375 7.8125 4.3125C6.9375 5.1875 6.5 6.25 6.5 7.5C6.5 8.75 6.9375 9.8125 7.8125 10.6875C8.6875 11.5625 9.75 12 11 12ZM11 10.2C10.25 10.2 9.6125 9.9375 9.0875 9.4125C8.5625 8.8875 8.3 8.25 8.3 7.5C8.3 6.75 8.5625 6.1125 9.0875 5.5875C9.6125 5.0625 10.25 4.8 11 4.8C11.75 4.8 12.3875 5.0625 12.9125 5.5875C13.4375 6.1125 13.7 6.75 13.7 7.5C13.7 8.25 13.4375 8.8875 12.9125 9.4125C12.3875 9.9375 11.75 10.2 11 10.2ZM11 15C8.56667 15 6.35 14.3208 4.35 12.9625C2.35 11.6042 0.9 9.78333 0 7.5C0.9 5.21667 2.35 3.39583 4.35 2.0375C6.35 0.679167 8.56667 0 11 0C13.4333 0 15.65 0.679167 17.65 2.0375C19.65 3.39583 21.1 5.21667 22 7.5C21.1 9.78333 19.65 11.6042 17.65 12.9625C15.65 14.3208 13.4333 15 11 15Z"
+                  fill="#9E7959" />
+              </svg>
+              <span id="viewCount">0</span>
+            </div>
+            <!-- 좋아요 -->
+            <div class="likes">
+              <button class="like-button">
+                <svg class="heart" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                  <path
+                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+                  </path>
+                </svg>
+              </button>
+              <span id="likeCount">0</span>
+            </div>
+            <!-- 댓글 -->
+            <div class="comments">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <mask id="mask0_760_29" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24"
+                  height="24">
+                  <rect width="24" height="24" fill="#D9D9D9" />
+                </mask>
+                <g mask="url(#mask0_760_29)">
+                  <path
+                    d="M6 14H18V12H6V14ZM6 11H18V9H6V11ZM6 8H18V6H6V8ZM4 18C3.45 18 2.97917 17.8042 2.5875 17.4125C2.19583 17.0208 2 16.55 2 16V4C2 3.45 2.19583 2.97917 2.5875 2.5875C2.97917 2.19583 3.45 2 4 2H20C20.55 2 21.0208 2.19583 21.4125 2.5875C21.8042 2.97917 22 3.45 22 4V22L18 18H4Z"
+                    fill="#9E7959" />
+                </g>
+              </svg>
+              <span id="commentCount">0</span>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2>댓글</h2>
+          <div class="comment-box">
+            <form action="" class="comment-form">
+              <textarea placeholder="댓글을 입력하세요..."></textarea>
+              <button type="submit" class="btn btn-primary">댓글 작성</button>
+            </form>
+          </div>
+
+          <ul class="comments-view">
+            <li class="comment">
+              <p><span class="user-name">User1</span> <small>2023.12.11</small></p>
+              <p class="comment-content">오 이번에 갔다 왔구나~</p>
+              <div class="comment-buttons">
+                <button class="edit-button">수정</button>
+                <button class="delete-button">삭제</button>
+              </div>
+              <form class="edit-form hidden">
+                <textarea class="edit-textarea" placeholder="댓글을 수정하세요..."></textarea>
+                <button type="submit" class="btn">저장</button>
+              </form>
+              <ul class="replys">
+                <li class="reply">
+                  <p><span class="user-name">User2</span> <small>2023.12.11</small></p>
+                  <p class="comment-content">맞아요 ~ㅎㅎ</p>
+                  <div class="comment-buttons">
+                    <button class="edit-button">수정</button>
+                    <button class="delete-button">삭제</button>
+                  </div>
+                  <form class="edit-form hidden">
+                    <textarea class="edit-textarea" placeholder="댓글을 수정하세요..."></textarea>
+                    <button type="submit" class="btn">저장</button>
+                  </form>
+                </li>
+                <li class="reply">
+                  <p><span class="user-name">User1</span> <small>2023.12.11</small></p>
+                  <p class="comment-content">다음번에 나도 데려가줘🥺</p>
+                  <div class="comment-buttons">
+                    <button class="edit-button">수정</button>
+                    <button class="delete-button">삭제</button>
+                  </div>
+                  <form class="edit-form hidden">
+                    <textarea class="edit-textarea" placeholder="댓글을 수정하세요..."></textarea>
+                    <button type="submit" class="btn">저장</button>
+                  </form>
+                </li>
+              </ul>
+            </li>
+            <li class="comment">
+              <p><span class="user-name">User123</span> <small>2023.12.11</small></p>
+              <p class="comment-content">잘보고 가요</p>
+              <div class="comment-buttons">
+                <button class="edit-button">수정</button>
+                <button class="delete-button">삭제</button>
+              </div>
+              <form class="edit-form hidden">
+                <textarea class="edit-textarea" placeholder="댓글을 수정하세요..."></textarea>
+                <button type="submit" class="btn">저장</button>
+              </form>
+              <ul class="replys">
+                <li class="reply">
+                  <p><span class="user-name">User2</span> <small>2023.12.11</small></p>
+                  <p class="comment-content">감사합니다ㅎㅎ</p>
+                  <div class="comment-buttons">
+                    <button class="edit-button">수정</button>
+                    <button class="delete-button">삭제</button>
+                  </div>
+                  <form class="edit-form hidden">
+                    <textarea class="edit-textarea" placeholder="댓글을 수정하세요..."></textarea>
+                    <button type="submit" class="btn">저장</button>
+                  </form>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+      </div>
+    </main>
+    <!-- End main -->
+
+
+    <!-- Begin footer -->
+    <footer>
+      <div class="container">
+        <div class="page-desc">
+          <p>©2023 Tanghuru All rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+    <!-- End footer -->
+  </div>
+
+  <script src="../js/scripts.js"></script>
+  <script src="../js/trend_mission.js"></script>
+</body>
+
+</html>
