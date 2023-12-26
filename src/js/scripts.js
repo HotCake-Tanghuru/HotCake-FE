@@ -17,3 +17,4 @@ function removeSelectedFile() {
   input.value = '';
   preview.style.backgroundImage = 'none';
 }
+
