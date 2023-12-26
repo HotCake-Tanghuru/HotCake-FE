@@ -114,6 +114,22 @@
     </footer>
     <!-- End footer -->
   </div>
+  <script>
+    // 접속중인 사용자 확인
+    fetch('http://43.202.230.2/users/info', {
+      method: 'GET',
+      headers: {
+          'Content-Type': 'application/json',
+      },
+      credentials: 'include',
+    })
+    .then(response => response.json())
+    .then(data => {
+      console.log(data);
+    })
+  
+
+  </script>
 
   <script src="../js/scripts.js"></script>
 </body>

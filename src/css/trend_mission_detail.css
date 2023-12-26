@@ -7,8 +7,27 @@
   max-width: 600px;
   height: calc(100vh * 0.5);
   max-height: 600px;
-  background: black url(../assets/images/wintertravel1.png) center/contain no-repeat;
+  background: url(../assets/images/wintertravel1.png) center/contain no-repeat;
+  outline: 1px solid var(--almond, #bc9982);
   margin: 1rem auto;
+  color: var(--almond, #bc9982);
+}
+
+.image-control {
+  margin-bottom: 1rem;
+}
+
+.image-control .image-upload-btn {
+  padding: 0.5rem 1rem;
+}
+
+.image-control .image-upload-btn + input  {
+  display: none;
+}
+
+.image-control .image-delete-btn {
+  background-color: var(--red, #d7433a);
+  color: whitesmoke;
 }
 
 .comment {
@@ -20,4 +39,36 @@
   margin: 0 auto 1rem;
   border-radius: 0.5rem;
   text-align:left;
+}
+
+.comment-box {
+  display: block;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0.5rem;
+  resize: vertical;
+  border: 1px solid var(--almond, #bc9982);
+  border-radius: 0.5rem;
+  background-color: transparent;
+}
+
+.comment-box:focus-visible {
+  outline: none;
+  background-color: whitesmoke;
+}
+
+/* 웹킷 기반 브라우저에서 스크롤바 디자인 변경 */
+.comment-box::-webkit-scrollbar {
+  width: 8px;
+  
+}
+
+.comment-box::-webkit-scrollbar-thumb {
+  background: var(--almond, #bc9982);
+  border-radius: 0.5rem;
+}
+
+.comment-box + button {
+  margin-top: 1rem;
 }
