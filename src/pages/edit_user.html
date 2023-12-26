@@ -36,10 +36,12 @@
       <div class="content-container">
         <form action="" class="edit-file">
           <!-- 프로필 사진 수정 -->
-          <div class="image-upload-button">
-            <label for="file-input">+</label>
-            <input id="file-input" type="file" />
-          </div>
+          <div class="profile-image" id="imagePreview"></div>
+            <div class="image-control">
+              <label for="imageUpload" class="btn image-upload-btn">사진 선택</label>
+              <input type="file" id="imageUpload" accept="image/*" onchange="previewImage()">
+              <button class="btn image-delete-btn" onclick="removeSelectedFile()">사진 삭제</button>
+            </div>
         </form>
         <form action="" class="edit-text">
           <!-- 닉네임 수정 상자 -->
