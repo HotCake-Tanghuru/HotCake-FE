@@ -42,19 +42,19 @@
             <ul class="follow">
               <li class="followers">
                 <a href="./followers.html">
-                  <span class="follow-num">0</span>
+                  <span class="follower-num">0</span>
                   <p class="follow-text">팔로워</p>
                 </a>
               </li>
               <li class="followings">
                 <a href="./followings.html">
-                  <span class="follow-num">0</span>
+                  <span class="following-num">0</span>
                   <p class="follow-text">팔로잉</p>
                 </a>
               </li>
             </ul>
             <!-- 프로필 수정 -->
-            <button class="btn edit-button" onclick="goToEditPage()">프로필 수정</button>
+            <button class="btn edit-btn">프로필 수정</button>
           </div>
         </div>
         <!-- 자기소개 -->
@@ -64,14 +64,12 @@
         </div>
         <div class="center">
           <!-- 스탬프 페이지 이동 -->
-          <button class="btn stamp-button" onclick="goToStampPage()">스탬프 확인하기</button>
+          <button class="btn stamp-btn">스탬프 확인하기</button>
+          <button class="btn like-list-btn">좋아요한 트렌드 보기</button>
         </div>
         <!-- 리스트 이동 -->
         <ul class="list-container">
-          <li><a href="#">겨울 여행지 LIST</a></li>
-          <li><a href="#">겨울 간식 LIST</a></li>
-          <li><a href="#">가을 LIST</a></li>
-          <li><a href="#">제주도 먹거리 LIST</a></li>
+          <!-- <li><a href="#">겨울 여행지 LIST</a></li> -->
         </ul>
       </div>
     </main>
@@ -89,18 +87,8 @@
     <!-- End footer -->
   </div>
 
-  <script>
-    // 프로필 수정 이동
-    function goToEditPage() {
-      window.location.href = "./edit_user.html";
-    }
-
-    // 스탬프 이동
-    function goToStampPage() {
-      window.location.href = "./my_stamp.html";
-    }
-  </script>
   <script src="../js/scripts.js"></script>
+  <script src="../js/user.js"></script>
 </body>
 
 </html>
