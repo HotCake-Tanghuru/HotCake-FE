@@ -34,7 +34,10 @@
     <!-- Begin main -->
     <main>
       <div class="content-container">
-        <h2>❄️겨울 여행지 추천❄️</h2>
+        <div id="trend-name">
+          <!-- <h2>❄️겨울 여행지 추천❄️</h2> -->
+        </div>
+        
         <div class="reaction-container">
           <!-- 조회수 -->
           <div class="views">
@@ -61,39 +64,7 @@
         </div>
 
         <ul class="trend-items">
-          <!-- 첫 번째 아이템 -->
-          <li class="trend-item">
-            <img src="../assets/images/wintertravel1.png" alt="무주 스키장">
-            <div class="description">
-              <h3>무주 스키장</h3>
-              <p>
-                겨울엔 역시 스키장이지!<br>
-                📍전라북도 무주군
-              </p>
-            </div>
-          </li>
-          <!-- 두 번째 아이템 -->
-          <li class="trend-item">
-            <img src="../assets/images/winter.png" alt="무주 스키장">
-            <div class="description">
-              <h3>덕유산</h3>
-              <p>
-                산의 설경에 빠져볼 시간<br>
-                📍전라북도 무주군
-              </p>
-            </div>
-          </li>
-          <!-- 세 번째 아이템 -->
-          <li class="trend-item">
-            <img src="../assets/images/wintertravel3.png" alt="무주 스키장">
-            <div class="description">
-              <h3>알프스마을</h3>
-              <p>
-                겨울 축제를 즐겨봐요<br>
-                📍충청남도 청양군
-              </p>
-            </div>
-          </li>
+        
         </ul>
         
         <button class="btn trend-join-btn" onclick="handleTrendAuthentication()">나도 이 트렌드 참여하기</button>
@@ -121,9 +92,9 @@
     </footer>
     <!-- End footer -->
   </div>
-
-  <script src="../js/scripts.js"></script>
   <script src="../js/trend.js"></script>
+  <script src="../js/scripts.js"></script>
+
 </body>
 
 </html>
