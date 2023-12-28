@@ -32,6 +32,7 @@ fetch(`${BASEURL}/users/info`, {
   },
 }).then(response => response.json())
   .then(data => {
+    localStorage.setItem('user_id', data.user_id);
     document.querySelector('.user-profile a').href = `./user.html?user_id=${data.user_id}`;
     if (data.user['profile_img']) {
       const imageUrl = data.user['profile_img'].includes('k.kakaocdn.net') ?
