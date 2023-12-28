@@ -28,7 +28,8 @@
   min-width: 50%;
 }
 
-.edit-btn {
+.edit-btn,
+.follow-btn {
   width: 100%;
 }
 
