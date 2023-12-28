@@ -199,7 +199,6 @@ fetch(BASEURL + '/trend-missions/about/' + trendMissionId, {
 
               // 대댓글 작성 form 생성
               const replyForm = document.createElement('form');
-              //editForm.classList.add('dynamic-edit-form');
               replyForm.classList.add('reply-form');
               replyForm.classList.add('hidden');
               replyForm.id = 'reply-form-id-' + commentList[i].id;
@@ -217,13 +216,10 @@ fetch(BASEURL + '/trend-missions/about/' + trendMissionId, {
               replyForm.appendChild(replySubmitButton);
 
               commentItem.appendChild(replyForm);
-
+              commentItem.appendChild(commentButtons);
 
               // 댓글 작성자와 접속자가 같은 경우 수정 삭제 버튼 생성
               if (commentList[i].user == userId) {
-            
-                
-
                 const editButton = document.createElement('button');
                 editButton.classList.add('edit-button');
                 editButton.textContent = '수정';
@@ -264,6 +260,9 @@ fetch(BASEURL + '/trend-missions/about/' + trendMissionId, {
                 
                 
               }
+              // 대댓글 수정 요소 넣어주기
+              commentItem.appendChild(replyForm);
+
               // 최종 댓글 요소에 줄바꿈 넣어주기
               const hr = document.createElement('hr');
               commentItem.appendChild(hr);
@@ -362,11 +361,6 @@ fetch(BASEURL + '/trend-missions/about/' + trendMissionId, {
               parentComment.appendChild(replyCommentClass);
             }
         }
-        
-      });
-
-
-
       
 
     // 대댓글 작성 버튼에 대한 함수 재할당
@@ -377,7 +371,7 @@ fetch(BASEURL + '/trend-missions/about/' + trendMissionId, {
     replyButtons.forEach((button, index) => {
       button.addEventListener('click', () => {
         replyForms[index].classList.toggle('hidden');
-        //replyCommentButtons[index].classList.toggle('hidden');
+        replyCommentButtons[index].classList.toggle('hidden');
 
       });
     });
@@ -485,11 +479,8 @@ fetch(BASEURL + '/trend-missions/about/' + trendMissionId, {
           window.location.reload();
         });
       });
-
     });
-
-
-
+});
 });
 
       
