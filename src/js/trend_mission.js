@@ -17,6 +17,10 @@ editButtons.forEach((button, index) => {
   });
 });
 
+
+
+
+// url값 가져오기
 const urlParams = new URLSearchParams(window.location.search);
 const trendMissionId = urlParams.get('trend_mission_id');
 const trendName = urlParams.get('trend_name');
@@ -179,11 +183,42 @@ fetch(BASEURL + '/trend-missions/about/' + trendMissionId, {
           commentItem.appendChild(commentP);
           commentItem.appendChild(commentContent);
 
-          // 댓글 작성자와 접속자가 같은 경우 수정 삭제 버튼 생성
+          const commentButtons = document.createElement('div');
+          commentButtons.classList.add('comment-buttons');
 
+          // 댓글인 경우에만 대댓글 작성 버튼 생성
+          const replyButton = document.createElement('button');
+          replyButton.classList.add('reply-button');
+          replyButton.textContent = '대댓글';
+          commentButtons.appendChild(replyButton);
+          
+
+          // 대댓글 작성 form 생성
+          const replyForm = document.createElement('form');
+          //editForm.classList.add('dynamic-edit-form');
+          replyForm.classList.add('reply-form');
+          replyForm.classList.add('hidden');
+          replyForm.id = 'reply-form-id-' + commentList[i].id;
+
+          const replyTextarea = document.createElement('textarea');
+          replyTextarea.classList.add('reply-textarea');          
+          replyTextarea.placeholder = '대댓글을 작성하세요...';
+
+          const replySubmitButton = document.createElement('button');
+          replySubmitButton.type = 'submit';
+          replySubmitButton.classList.add('btn');
+          replySubmitButton.textContent = '저장';
+
+          replyForm.appendChild(replyTextarea);
+          replyForm.appendChild(replySubmitButton);
+
+          commentItem.appendChild(replyForm);
+
+
+          // 댓글 작성자와 접속자가 같은 경우 수정 삭제 버튼 생성
           if (commentList[i].user == userId) {
-            const commentButtons = document.createElement('div');
-            commentButtons.classList.add('comment-buttons');
+        
+            
 
             const editButton = document.createElement('button');
             editButton.classList.add('edit-button');
@@ -197,6 +232,7 @@ fetch(BASEURL + '/trend-missions/about/' + trendMissionId, {
             // 생성한 수정 삭제 버튼 넣어주기
             commentButtons.appendChild(editButton);
             commentButtons.appendChild(deleteButton);
+            //commentButtons.appendChild(replyButton);
 
             // 수정 버튼 클릭 시 수정 폼 활성화
             const editForm = document.createElement('form');
@@ -231,9 +267,7 @@ fetch(BASEURL + '/trend-missions/about/' + trendMissionId, {
           // 최종 댓글 요소 넣어주기
           commentsViewClass.appendChild(commentItem);
           
-
         }
-
         // 대댓글의 경우
         else {
           // 최종적으로 넣어줄 부모 댓글 요소  
@@ -249,7 +283,6 @@ fetch(BASEURL + '/trend-missions/about/' + trendMissionId, {
           replyCommentItem.classList.add('reply');
 
           // user name, date 처리
-
           const commentP = document.createElement('p');
           const userName = document.createElement('span');
           userName.classList.add('user-name');
@@ -326,6 +359,20 @@ fetch(BASEURL + '/trend-missions/about/' + trendMissionId, {
         }
     }
 
+    // 대댓글 작성 버튼에 대한 함수 재할당
+    const replyButtons = document.querySelectorAll('.reply-button');
+    const replyForms = document.querySelectorAll('.reply-form');
+    const replyCommentButtons = document.querySelectorAll('.reply-buttons');
+
+    replyButtons.forEach((button, index) => {
+      button.addEventListener('click', () => {
+        replyForms[index].classList.toggle('hidden');
+        //replyCommentButtons[index].classList.toggle('hidden');
+
+      });
+    });
+
+
     // 댓글 모두 로드 완료,,,
     // 댓글 수정 버튼에 대한 함수 재할당
     const editButtons = document.querySelectorAll('.edit-button');
@@ -340,10 +387,6 @@ fetch(BASEURL + '/trend-missions/about/' + trendMissionId, {
         editForms[index].classList.toggle('hidden');
         commentContents[index].classList.toggle('hidden');
         commentButtons[index].classList.toggle('hidden');
-
-        // 기존 댓글 내용을 수정할 수 있는 입력 필드에 채워 넣음
-        const existingComment = commentContents[index].textContent.trim();
-        editTextareas[index].value = existingComment;
       });
     });
 
@@ -383,7 +426,6 @@ fetch(BASEURL + '/trend-missions/about/' + trendMissionId, {
         event.preventDefault();
         const commentId = form.id.split('-')[3];
         const commentValue = editTextareas[index].value;
-        console.log(commentId, commentValue)
 
         fetch(`${BASEURL}/trend-missions/comments`, {
           method: 'PATCH',
@@ -405,6 +447,35 @@ fetch(BASEURL + '/trend-missions/about/' + trendMissionId, {
           window.location.reload();
         });
       });
+    });
+
+    // 대댓글 작성
+    replyForms.forEach((form, index) => {
+      form.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const commentId = form.id.split('-')[3];
+        const commentValue = form.querySelector('.reply-textarea').value;
+
+        fetch(`${BASEURL}/trend-missions/comments/${commentId}/replies`, {
+          method: 'POST',
+          headers: {
+            'Authorization': `Bearer ${token}`,
+            'Content-Type': 'application/json',
+          },
+          credentials: 'include',
+          body: JSON.stringify(
+            {
+            'content': commentValue
+            }),
+          
+        })
+        .then(response => response.json())
+        .then(data => {
+          // 대댓글 작성 성공 시 페이지 새로고침
+          window.location.reload();
+        });
+      });
+
     });
 
 
