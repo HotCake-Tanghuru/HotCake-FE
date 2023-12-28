@@ -5,23 +5,46 @@ const commentBox = document.querySelector('.comment-box');
 const urlParams = new URLSearchParams(window.location.search);
 const missionItemId = urlParams.get('trend_mission_item_id');
 
+const userId = localStorage.getItem('user_id');
+let trendName = '';
+
 async function fetchMissionItemData(missionItemId) {
-  const response = await fetch(`${BASEURL}/trend-missions/mission-item/${missionItemId}`, {
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json',
-      'Authorization': `Bearer ${token}`
-    },
-  });
+  try {
+    const response = await fetch(`${BASEURL}/trend-missions/mission-item/${missionItemId}`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`
+      },
+    });
 
-  if (!response.ok) {
-    throw new Error('Network response was not ok');
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+
+    const missionItemData = await response.json();
+    missionItem.textContent = missionItemData.trend_item_name;
+    commentBox.value = missionItemData.content;
+
+    // 2번째 fetch 요청 수행
+    fetch(`${BASEURL}/trend-missions/${userId}`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`
+      },
+    })
+      .then(response => response.json())
+      .then(data => {
+        data.forEach((mission) => {
+          if (mission.id === missionItemData.trend_mission) {
+            trendName = mission.trend_name;
+          }
+        });
+      });
+  } catch (error) {
+    console.error(error);
   }
-
-  const missionItemData = await response.json();
-  console.log(missionItemData);
-  missionItem.textContent = missionItemData.trend_item_name
-  commentBox.value = missionItemData.content
 }
 
 if (missionItemId) {
@@ -55,7 +78,7 @@ document.getElementById('trendMissionEditBtn').addEventListener('click', functio
     .then(data => {
       if (data) {
         alert('변경이 완료되었습니다.')
-        window.location.href = `trend_mission_detail.html?trend_mission_item_id=${missionItemId}`;
+        window.location.href = `./trend_mission.html?trend_mission_id=${data.id}&trend_name=${trendName}&user_id=${userId}`;
       }
     })
     .catch(error => {
