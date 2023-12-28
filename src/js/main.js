@@ -11,25 +11,6 @@ if (encodedData != null) {
   localStorage.setItem('refresh_tokens', data.refresh_token);
 }
 
-
-
-// 접속중인 사용자 확인
-fetch('http://43.202.230.2' + '/users/info', {
-  method: 'GET',
-  headers: {
-    'Authorization': 'Bearer ' + localStorage.getItem('access_tokens'),
-    'Content-Type': 'application/json',
-  },
-  credentials: 'include',
-})
-  .then(response => response.json())
-  .then(data => {
-
-
-
-  })
-
-
 //핫 트렌드 페이지 조회
 fetch('http://43.202.230.2' + '/trends', {
   method: 'GET',
@@ -107,3 +88,86 @@ fetch('http://43.202.230.2' + '/trends', {
       innerList.style.marginLeft = `-${outer.clientWidth * currentIndex}px`; // index만큼 margin을 주어 옆으로 밀기
     });
   })
+
+// 랜덤한 팔로우 데이터 조회
+fetch('http://43.202.230.2' + '/trend-missions/random', {
+  method: 'GET',
+  headers: {
+    'Authorization': 'Bearer ' + localStorage.getItem('access_tokens'),
+    'Content-Type': 'application/json',
+  },
+  credentials: 'include',
+})
+  .then(response => response.json())
+  .then(data => {
+    console.log(data);
+
+    let followingUserName = data['user_nickname'];
+    let followingUserId = data['user'];
+    let trendName = data['trend_name'];
+    let trendId = data['trend'];
+    let trend_mission_id = data['id'];
+    let imageList = [];
+    for (let i = 0; i < 3; i++) {
+      if (data['trend_item_list'][i].image == null) {
+        imageList.push('./user.png');
+      } else{
+        imageList.push('http://43.202.230.2' + data['trend_item_list'][i].image);
+      }
+    }
+
+    const trendPostList = document.querySelector('.trend-posts');
+
+    // 요소 생성
+    const trendPost = document.createElement('li');
+    trendPost.classList.add('trend-post');
+
+    const trendUser = document.createElement('h3');
+    trendUser.classList.add('trend-user');
+    
+    // 사용자 이름 + 프로필 링크
+    const trendUserSpan = document.createElement('span');
+    const userProfileA = document.createElement('a');
+    userProfileA.href = './user.html?user_id=' + followingUserId;
+    userProfileA.innerHTML = followingUserName;
+    trendUserSpan.appendChild(userProfileA);
+    trendUser.appendChild(trendUserSpan);
+
+    // 중간에 - 추가
+    trendUser.innerHTML += ' - ';
+
+    // 트렌드 이름 + 트렌드 링크
+    const trendNameStrong = document.createElement('strong');
+    const trendNameA = document.createElement('a');
+    trendNameA.href = './trend.html?trend_id=' + trendId + '&trend_name=' + trendName;
+    trendNameA.innerHTML = trendName;
+    trendNameStrong.appendChild(trendNameA);
+    trendUser.appendChild(trendNameStrong);
+
+    // 트렌드 미션 이미지 리스트
+    const trendPhotos = document.createElement('ul');
+    trendPhotos.classList.add('trend-photos');
+
+    // 이미지 3개만 노출
+    for (let k = 0; k<3; k++) {
+      const photoli = document.createElement('li');
+      const photoA = document.createElement('a');
+      const photoImg = document.createElement('img');
+
+      photoA.href = './trend_mission.html?trend_mission_id=' + trend_mission_id + '&trend_name=' + trendName + '&user_id=' + followingUserId;
+      photoImg.src = imageList[k];
+
+      
+      photoA.appendChild(photoImg);
+      photoli.appendChild(photoA);
+      trendPhotos.appendChild(photoli);
+    }
+
+    trendPost.appendChild(trendUser);
+    trendPost.appendChild(trendPhotos);
+
+    trendPostList.appendChild(trendPost);
+
+  });
+
+

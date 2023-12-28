@@ -24,7 +24,7 @@ editButtons.forEach((button, index) => {
 const urlParams = new URLSearchParams(window.location.search);
 const trendMissionId = urlParams.get('trend_mission_id');
 const trendName = urlParams.get('trend_name');
-const userId = urlParams.get('user_id');
+const pageUserId = urlParams.get('user_id');
 
 
 // 좋아요 버튼을 가져옵니다.
@@ -115,8 +115,8 @@ fetch(BASEURL + '/trend-missions/about/' + trendMissionId, {
 
       // 좋아요 확인
       // 이미 좋아요 한 경우 하트를 빨간색으로 채웁니다.
-      // 접속중인 사용자 확인
 
+      // 접속중인 사용자 확인
       fetch(BASEURL + '/users/info', {
         method: 'GET',
         headers: {
@@ -127,237 +127,247 @@ fetch(BASEURL + '/trend-missions/about/' + trendMissionId, {
       })
         .then(response => response.json())
         .then(userData => {
-          userIdLike = userData.user_id;
+          userId = userData.user_id;
           // 좋아요 목록 가져오기
           const likeList = data.like_list;
 
           // 접속자가 이미 좋아요 했는지 체크
           for (let i = 0; i < likeList.length; i++) {
-            if (userIdLike == likeList[i].user) {
+            if (userId == likeList[i].user) {
                 isLiked = true;
                 heart.style.fill = '#D7433A';
             } 
           }
-        });
 
-      //댓글 수 표시
-      const commentCount = document.getElementById('commentCount');
-      commentCount.textContent = data.comment_list.length;
+          // 접속자가 페이지 주인과 다르면 스탬프 버튼 삭제
+          if (userId != pageUserId) {
+            stampButton.remove();
+          }
 
-      // 댓글 데이터 가져오기
-      const commentList = data.comment_list;
+          //댓글 수 표시
+          const commentCount = document.getElementById('commentCount');
+          commentCount.textContent = data.comment_list.length;
 
-      // 댓글 
-      const commentsViewClass = document.querySelector('.comments-view');
+          // 댓글 데이터 가져오기
+          const commentList = data.comment_list;
+
+          // 댓글 
+          const commentsViewClass = document.querySelector('.comments-view');
+          
+
+          for (let i = 0; i < commentList.length; i++) {
+            // 댓글인지 대댓글인지 확인
+            if (commentList[i].parent_comment == null) { // 댓글인 경우
+              // <li> 요소를 생성합니다.
+              const commentItem = document.createElement('li');
+              commentItem.classList.add('comment');
+              commentItem.id = 'comment-id-' + commentList[i].id;
+
+              // user name, date
+              const commentP = document.createElement('p');
+              const userName = document.createElement('span');
+              userName.classList.add('user-name');
+              userName.textContent = commentList[i].user_nickname;
+
+              const date = document.createElement('small');
+              const originalDate = commentList[i].created_at;
+              const parsedDate = new Date(originalDate);
+              const formattedDate = `${parsedDate.getFullYear()}.${parsedDate.getMonth() + 1}.${parsedDate.getDate()}`;
+              date.textContent = formattedDate;
+
+              commentP.appendChild(userName);
+              commentP.appendChild(date);
+
+              // content
+              const commentContent = document.createElement('p');
+              commentContent.classList.add('comment-content');
+              commentContent.textContent = commentList[i].content;
+
+              // 작성자 이름, 댓글 내용 넣어주기
+              commentItem.appendChild(commentP);
+              commentItem.appendChild(commentContent);
+
+              const commentButtons = document.createElement('div');
+              commentButtons.classList.add('comment-buttons');
+
+              // 댓글인 경우에만 대댓글 작성 버튼 생성
+              const replyButton = document.createElement('button');
+              replyButton.classList.add('reply-button');
+              replyButton.textContent = '대댓글';
+              commentButtons.appendChild(replyButton);
+              
+
+              // 대댓글 작성 form 생성
+              const replyForm = document.createElement('form');
+              //editForm.classList.add('dynamic-edit-form');
+              replyForm.classList.add('reply-form');
+              replyForm.classList.add('hidden');
+              replyForm.id = 'reply-form-id-' + commentList[i].id;
+
+              const replyTextarea = document.createElement('textarea');
+              replyTextarea.classList.add('reply-textarea');          
+              replyTextarea.placeholder = '대댓글을 작성하세요...';
+
+              const replySubmitButton = document.createElement('button');
+              replySubmitButton.type = 'submit';
+              replySubmitButton.classList.add('btn');
+              replySubmitButton.textContent = '저장';
+
+              replyForm.appendChild(replyTextarea);
+              replyForm.appendChild(replySubmitButton);
+
+              commentItem.appendChild(replyForm);
+
+
+              // 댓글 작성자와 접속자가 같은 경우 수정 삭제 버튼 생성
+              if (commentList[i].user == userId) {
+            
+                
+
+                const editButton = document.createElement('button');
+                editButton.classList.add('edit-button');
+                editButton.textContent = '수정';
+
+                const deleteButton = document.createElement('button');
+                deleteButton.classList.add('delete-button');
+                deleteButton.id = 'delete-button-id-' + commentList[i].id;
+                deleteButton.textContent = '삭제';
+                
+                // 생성한 수정 삭제 버튼 넣어주기
+                commentButtons.appendChild(editButton);
+                commentButtons.appendChild(deleteButton);
+                //commentButtons.appendChild(replyButton);
+
+                // 수정 버튼 클릭 시 수정 폼 활성화
+                const editForm = document.createElement('form');
+                //editForm.classList.add('dynamic-edit-form');
+                editForm.classList.add('edit-form');
+                editForm.classList.add('hidden');
+                editForm.id = 'edit-form-id-' + commentList[i].id;
+
+                const editTextarea = document.createElement('textarea');
+                editTextarea.classList.add('edit-textarea');          
+                editTextarea.placeholder = '댓글을 수정하세요...';
       
+                const editSubmitButton = document.createElement('button');
+                editSubmitButton.type = 'submit';
+                editSubmitButton.classList.add('btn');
+                editSubmitButton.textContent = '저장';
 
-      for (let i = 0; i < commentList.length; i++) {
-        // 댓글인지 대댓글인지 확인
-        if (commentList[i].parent_comment == null) { // 댓글인 경우
-          // <li> 요소를 생성합니다.
-          const commentItem = document.createElement('li');
-          commentItem.classList.add('comment');
-          commentItem.id = 'comment-id-' + commentList[i].id;
-
-          // user name, date
-          const commentP = document.createElement('p');
-          const userName = document.createElement('span');
-          userName.classList.add('user-name');
-          userName.textContent = commentList[i].user_nickname;
-
-          const date = document.createElement('small');
-          const originalDate = commentList[i].created_at;
-          const parsedDate = new Date(originalDate);
-          const formattedDate = `${parsedDate.getFullYear()}.${parsedDate.getMonth() + 1}.${parsedDate.getDate()}`;
-          date.textContent = formattedDate;
-
-          commentP.appendChild(userName);
-          commentP.appendChild(date);
-
-          // content
-          const commentContent = document.createElement('p');
-          commentContent.classList.add('comment-content');
-          commentContent.textContent = commentList[i].content;
-
-          // 작성자 이름, 댓글 내용 넣어주기
-          commentItem.appendChild(commentP);
-          commentItem.appendChild(commentContent);
-
-          const commentButtons = document.createElement('div');
-          commentButtons.classList.add('comment-buttons');
-
-          // 댓글인 경우에만 대댓글 작성 버튼 생성
-          const replyButton = document.createElement('button');
-          replyButton.classList.add('reply-button');
-          replyButton.textContent = '대댓글';
-          commentButtons.appendChild(replyButton);
-          
-
-          // 대댓글 작성 form 생성
-          const replyForm = document.createElement('form');
-          //editForm.classList.add('dynamic-edit-form');
-          replyForm.classList.add('reply-form');
-          replyForm.classList.add('hidden');
-          replyForm.id = 'reply-form-id-' + commentList[i].id;
-
-          const replyTextarea = document.createElement('textarea');
-          replyTextarea.classList.add('reply-textarea');          
-          replyTextarea.placeholder = '대댓글을 작성하세요...';
-
-          const replySubmitButton = document.createElement('button');
-          replySubmitButton.type = 'submit';
-          replySubmitButton.classList.add('btn');
-          replySubmitButton.textContent = '저장';
-
-          replyForm.appendChild(replyTextarea);
-          replyForm.appendChild(replySubmitButton);
-
-          commentItem.appendChild(replyForm);
+                editForm.appendChild(editTextarea);
+                editForm.appendChild(editSubmitButton);
 
 
-          // 댓글 작성자와 접속자가 같은 경우 수정 삭제 버튼 생성
-          if (commentList[i].user == userId) {
-        
+                // 위에서 생성한 요소 전부 넣어주기
+                commentItem.appendChild(commentButtons);
+                commentItem.appendChild(editForm);
+                
+                
+              }
+              // 최종 댓글 요소에 줄바꿈 넣어주기
+              const hr = document.createElement('hr');
+              commentItem.appendChild(hr);
+
+              // 최종 댓글 요소 넣어주기
+              commentsViewClass.appendChild(commentItem);
+              
+            }
+            // 대댓글의 경우
+            else {
+              // 최종적으로 넣어줄 부모 댓글 요소  
+              const parentComment = document.getElementById('comment-id-' + commentList[i].parent_comment);
+              
+              // <ul> 요소를 생성합니다.
+              const replyCommentClass = document.createElement('ul');
+              replyCommentClass.classList.add('replys');
+              replyCommentClass.id = 'comment-id-' + commentList[i].id;
+              
+              // <li> 요소를 생성합니다.
+              const replyCommentItem = document.createElement('li');
+              replyCommentItem.classList.add('reply');
+
+              // user name, date 처리
+              const commentP = document.createElement('p');
+              const userName = document.createElement('span');
+              userName.classList.add('user-name');
+              userName.textContent = commentList[i].user_nickname;
+
+              const date = document.createElement('small');
+              const originalDate = commentList[i].created_at;
+              const parsedDate = new Date(originalDate);
+              const formattedDate = `${parsedDate.getFullYear()}.${parsedDate.getMonth() + 1}.${parsedDate.getDate()}`;
+              date.textContent = formattedDate;
+
+              commentP.appendChild(userName);
+              commentP.appendChild(date);
+
+              // content
+              const commentContent = document.createElement('p');
+              commentContent.classList.add('comment-content');
+              commentContent.textContent = commentList[i].content;
+
+              // 작성자 이름, 댓글 내용 넣어주기
+              replyCommentItem.appendChild(commentP);
+              replyCommentItem.appendChild(commentContent);
+
+              // 대댓글 작성자와 접속자가 같은 경우 수정 삭제 버튼 생성
+              if (commentList[i].user == userId) {
+                const commentButtons = document.createElement('div');
+                commentButtons.classList.add('comment-buttons');
+
+                const editButton = document.createElement('button');
+                editButton.classList.add('edit-button');
+                editButton.textContent = '수정';
+
+                const deleteButton = document.createElement('button');
+                deleteButton.classList.add('delete-button');
+                deleteButton.id = 'delete-button-id-' + commentList[i].id;
+                deleteButton.textContent = '삭제';
+                
+                // 생성한 수정 삭제 버튼 넣어주기
+                commentButtons.appendChild(editButton);
+                commentButtons.appendChild(deleteButton);
+
+                // 수정 버튼 클릭 시 수정 폼 활성화
+                const editForm = document.createElement('form');
+                editForm.classList.add('edit-form');
+                editForm.classList.add('hidden');
+                editForm.id = 'edit-form-id-' + commentList[i].id;
+
+                const editTextarea = document.createElement('textarea');
+                editTextarea.classList.add('edit-textarea');
+                editTextarea.placeholder = '댓글을 수정하세요...';
+                
+                const editSubmitButton = document.createElement('button');
+                editSubmitButton.classList.add('btn');
+                editSubmitButton.type = 'submit';
+                editSubmitButton.textContent = '저장';
+
+                editForm.appendChild(editTextarea);
+                editForm.appendChild(editSubmitButton);
+
+
+                // 위에서 생성한 요소 전부 넣어주기
+                replyCommentItem.appendChild(commentButtons);
+                replyCommentItem.appendChild(editForm);            
+              }
+              // 최종 대댓글 요소 넣어주기
+              replyCommentClass.appendChild(replyCommentItem);
+
+              // 최종 댓글 요소에 줄바꿈 넣어주기
+              const hr = document.createElement('hr');
+              replyCommentClass.appendChild(hr);
             
-
-            const editButton = document.createElement('button');
-            editButton.classList.add('edit-button');
-            editButton.textContent = '수정';
-
-            const deleteButton = document.createElement('button');
-            deleteButton.classList.add('delete-button');
-            deleteButton.id = 'delete-button-id-' + commentList[i].id;
-            deleteButton.textContent = '삭제';
-            
-            // 생성한 수정 삭제 버튼 넣어주기
-            commentButtons.appendChild(editButton);
-            commentButtons.appendChild(deleteButton);
-            //commentButtons.appendChild(replyButton);
-
-            // 수정 버튼 클릭 시 수정 폼 활성화
-            const editForm = document.createElement('form');
-            //editForm.classList.add('dynamic-edit-form');
-            editForm.classList.add('edit-form');
-            editForm.classList.add('hidden');
-            editForm.id = 'edit-form-id-' + commentList[i].id;
-
-            const editTextarea = document.createElement('textarea');
-            editTextarea.classList.add('edit-textarea');          
-            editTextarea.placeholder = '댓글을 수정하세요...';
-  
-            const editSubmitButton = document.createElement('button');
-            editSubmitButton.type = 'submit';
-            editSubmitButton.classList.add('btn');
-            editSubmitButton.textContent = '저장';
-
-            editForm.appendChild(editTextarea);
-            editForm.appendChild(editSubmitButton);
-
-
-            // 위에서 생성한 요소 전부 넣어주기
-            commentItem.appendChild(commentButtons);
-            commentItem.appendChild(editForm);
-            
-            
-          }
-          // 최종 댓글 요소에 줄바꿈 넣어주기
-          const hr = document.createElement('hr');
-          commentItem.appendChild(hr);
-
-          // 최종 댓글 요소 넣어주기
-          commentsViewClass.appendChild(commentItem);
-          
+              //부모 요소에 대댓글 요소 넣어주기
+              parentComment.appendChild(replyCommentClass);
+            }
         }
-        // 대댓글의 경우
-        else {
-          // 최종적으로 넣어줄 부모 댓글 요소  
-          const parentComment = document.getElementById('comment-id-' + commentList[i].parent_comment);
-          
-          // <ul> 요소를 생성합니다.
-          const replyCommentClass = document.createElement('ul');
-          replyCommentClass.classList.add('replys');
-          replyCommentClass.id = 'comment-id-' + commentList[i].id;
-          
-          // <li> 요소를 생성합니다.
-          const replyCommentItem = document.createElement('li');
-          replyCommentItem.classList.add('reply');
-
-          // user name, date 처리
-          const commentP = document.createElement('p');
-          const userName = document.createElement('span');
-          userName.classList.add('user-name');
-          userName.textContent = commentList[i].user_nickname;
-
-          const date = document.createElement('small');
-          const originalDate = commentList[i].created_at;
-          const parsedDate = new Date(originalDate);
-          const formattedDate = `${parsedDate.getFullYear()}.${parsedDate.getMonth() + 1}.${parsedDate.getDate()}`;
-          date.textContent = formattedDate;
-
-          commentP.appendChild(userName);
-          commentP.appendChild(date);
-
-          // content
-          const commentContent = document.createElement('p');
-          commentContent.classList.add('comment-content');
-          commentContent.textContent = commentList[i].content;
-
-          // 작성자 이름, 댓글 내용 넣어주기
-          replyCommentItem.appendChild(commentP);
-          replyCommentItem.appendChild(commentContent);
-
-          // 대댓글 작성자와 접속자가 같은 경우 수정 삭제 버튼 생성
-          if (commentList[i].user == userId) {
-            const commentButtons = document.createElement('div');
-            commentButtons.classList.add('comment-buttons');
-
-            const editButton = document.createElement('button');
-            editButton.classList.add('edit-button');
-            editButton.textContent = '수정';
-
-            const deleteButton = document.createElement('button');
-            deleteButton.classList.add('delete-button');
-            deleteButton.id = 'delete-button-id-' + commentList[i].id;
-            deleteButton.textContent = '삭제';
-            
-            // 생성한 수정 삭제 버튼 넣어주기
-            commentButtons.appendChild(editButton);
-            commentButtons.appendChild(deleteButton);
-
-            // 수정 버튼 클릭 시 수정 폼 활성화
-            const editForm = document.createElement('form');
-            editForm.classList.add('edit-form');
-            editForm.classList.add('hidden');
-            editForm.id = 'edit-form-id-' + commentList[i].id;
-
-            const editTextarea = document.createElement('textarea');
-            editTextarea.classList.add('edit-textarea');
-            editTextarea.placeholder = '댓글을 수정하세요...';
-            
-            const editSubmitButton = document.createElement('button');
-            editSubmitButton.classList.add('btn');
-            editSubmitButton.type = 'submit';
-            editSubmitButton.textContent = '저장';
-
-            editForm.appendChild(editTextarea);
-            editForm.appendChild(editSubmitButton);
-
-
-            // 위에서 생성한 요소 전부 넣어주기
-            replyCommentItem.appendChild(commentButtons);
-            replyCommentItem.appendChild(editForm);            
-          }
-          // 최종 대댓글 요소 넣어주기
-          replyCommentClass.appendChild(replyCommentItem);
-
-          // 최종 댓글 요소에 줄바꿈 넣어주기
-          const hr = document.createElement('hr');
-          replyCommentClass.appendChild(hr);
         
-          //부모 요소에 대댓글 요소 넣어주기
-          parentComment.appendChild(replyCommentClass);
-        }
-    }
+      });
+
+
+
+      
 
     // 대댓글 작성 버튼에 대한 함수 재할당
     const replyButtons = document.querySelectorAll('.reply-button');

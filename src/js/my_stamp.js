@@ -4,7 +4,7 @@ const stampElements = document.querySelectorAll('.stamp-container .stamp');
 const stampImagesContainer = document.querySelector(".photos");
 
 const urlParams = new URLSearchParams(window.location.search);
-const userId = urlParams.get('user');
+const userId = urlParams.get('user_id');
 
 let trendId = 0;
 
@@ -91,7 +91,7 @@ stamps.forEach(function (stamp) {
       stampDate.textContent = formattedDate;
 
       const moreLink = document.getElementById("moreLink");
-      const dynamicUrl = `trend_mission.html?trend_id=${stampData.id}`;
+      const dynamicUrl = `trend_mission.html?trend_mission_id=${stampData.trend_mission['id']}&trend_name=${stampData.trend_mission['trend']}&user_id=${stampData.user}`;
       moreLink.setAttribute("href", dynamicUrl);
     } else {
       console.error('응답이 오류를 포함합니다.');
