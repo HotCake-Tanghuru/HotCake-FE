@@ -36,30 +36,15 @@
         <section>
           <h2 class="trend-theme">❄️겨울 여행지 추천❄️</h2>
           <ul class="trend-items">
-            <li class="trend-item">
+            <!-- <li class="trend-item">
               <a href="./trend_mission_detail.html">
                 <div class="trend-item-image"></div>
                 <p>무주스키장</p>
               </a>
-            </li>
-            <li class="trend-item">
-              <a href="./trend_mission_detail.html">
-                <div class="trend-item-image">
-                  <img src="../assets/images/skiing2.png" alt="">
-                </div>
-                <p>덕유산</p>
-              </a>
-            </li>
-            <li class="trend-item">
-              <a href="./trend_mission_detail.html">
-                <div class="trend-item-image">
-                  <img src="../assets/images/winter.png" alt="">
-                </div>
-                <p>알프스마을</p>
-              </a>
-            </li>
+            </li> -->
+            
           </ul>
-          <button class="btn get-stamp-btn" disabled>스탬프 받기<br>(완료)</button>
+          <button class="btn get-stamp-btn" id="stamp-btn" disabled>스탬프 받기<br>(완료)</button>
 
           <div class="reaction-container">
             <!-- 조회수 -->
@@ -104,14 +89,14 @@
         <section>
           <h2>댓글</h2>
           <div class="comment-box">
-            <form action="" class="comment-form">
-              <textarea placeholder="댓글을 입력하세요..."></textarea>
-              <button type="submit" class="btn btn-primary">댓글 작성</button>
+            <form action="" class="comment-form" id="comment-form">
+              <textarea class="comment-textarea" placeholder="댓글을 입력하세요..."></textarea>
+              <button type="submit" id="comment-submit-btn" class="btn btn-primary">댓글 작성</button>
             </form>
           </div>
 
           <ul class="comments-view">
-            <li class="comment">
+            <!-- <li class="comment">
               <p><span class="user-name">User1</span> <small>2023.12.11</small></p>
               <p class="comment-content">오 이번에 갔다 왔구나~</p>
               <div class="comment-buttons">
@@ -122,6 +107,7 @@
                 <textarea class="edit-textarea" placeholder="댓글을 수정하세요..."></textarea>
                 <button type="submit" class="btn">저장</button>
               </form>
+
               <ul class="replys">
                 <li class="reply">
                   <p><span class="user-name">User2</span> <small>2023.12.11</small></p>
@@ -135,21 +121,11 @@
                     <button type="submit" class="btn">저장</button>
                   </form>
                 </li>
-                <li class="reply">
-                  <p><span class="user-name">User1</span> <small>2023.12.11</small></p>
-                  <p class="comment-content">다음번에 나도 데려가줘🥺</p>
-                  <div class="comment-buttons">
-                    <button class="edit-button">수정</button>
-                    <button class="delete-button">삭제</button>
-                  </div>
-                  <form class="edit-form hidden">
-                    <textarea class="edit-textarea" placeholder="댓글을 수정하세요..."></textarea>
-                    <button type="submit" class="btn">저장</button>
-                  </form>
-                </li>
               </ul>
-            </li>
-            <li class="comment">
+              
+            </li> -->
+
+            <!-- <li class="comment">
               <p><span class="user-name">User123</span> <small>2023.12.11</small></p>
               <p class="comment-content">잘보고 가요</p>
               <div class="comment-buttons">
@@ -174,7 +150,7 @@
                   </form>
                 </li>
               </ul>
-            </li>
+            </li> -->
           </ul>
         </section>
       </div>

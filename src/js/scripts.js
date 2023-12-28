@@ -37,3 +37,9 @@ fetch(`${BASEURL}/users/info`, {
     userImg.style.backgroundImage = `url(${imageUrl})`;
     userNickname.textContent = data.user['nickname'];
   })
+  .catch(error => {
+    // 요청 실패 시 에러 처리
+    console.error('프로필 정보를 가져오지 못했습니다:', error);
+    //확인 알림창
+    confirm('프로필을 가져오지 못했습니다. 새로고침하거나 로그인을 해주세요.');
+  });
