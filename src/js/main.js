@@ -14,7 +14,7 @@ if (encodedData != null) {
 
 
 // 접속중인 사용자 확인
-fetch(BASEURL + '/users/info', {
+fetch('http://43.202.230.2' + '/users/info', {
   method: 'GET',
   headers: {
     'Authorization': 'Bearer ' + localStorage.getItem('access_tokens'),
@@ -31,7 +31,7 @@ fetch(BASEURL + '/users/info', {
 
 
 //핫 트렌드 페이지 조회
-fetch(BASEURL + '/trends', {
+fetch('http://43.202.230.2' + '/trends', {
   method: 'GET',
   headers: {
     'Authorization': 'Bearer ' + localStorage.getItem('access_tokens'),
