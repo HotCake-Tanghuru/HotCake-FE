@@ -93,14 +93,10 @@
   background-color: white;
 }
 
-.edit-success-button {
+.edit-success-btn {
+  display: block;
   width: 100%;
-  margin: 0 auto;
-  margin-bottom: 1rem;
-}
-
-.edit-success-button>button {
-  width: 100%;
+  max-width: 400px;
   margin: 0 auto;
   margin-bottom: 1rem;
 }
