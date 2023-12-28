@@ -42,20 +42,13 @@
           <input type="search" name="nickname" id="search" required placeholder="닉네임 검색" maxlength="200">
           <button type="submit">검색</button>
         </form>
-
-        <!-- 팔로워하는 사용자, 이름, 팔로우 버튼 -->
+        
+        <ul class="search-results" style="display: none;">
+          <!-- 검색 결과 -->
+        </ul>
+        <!-- 팔로워 프로필 사진, 팔로워 이름, 팔로우 버튼, 삭제 버튼 -->
         <ul class="follow-list">
-          <li class="follow-user">
-            <div class="row-1">
-              <div class="follow-user-image"></div>
-              <p class="follow-user-name">오르미</p>
-            </div>
-            <div class="row-1 follow-buttons">
-              <button class="btn follower-button">팔로우</button>
-              <button class="btn delete-button">삭제</button>
-            </div>
-          </li>
-          <li class="follow-user">
+          <!--<li class="follow-user">
             <div class="row-1">
               <div class="follow-user-image"></div>
               <p class="follow-user-name">라이캣 정말 귀여워~~~~~~~~!!!</p>
@@ -64,7 +57,7 @@
               <button class="btn follower-button">팔로우</button>
               <button class="btn delete-button">삭제</button>
             </div>
-          </li>
+          </li>-->
         </ul>
       </div>
     </main>
@@ -82,6 +75,7 @@
   </div>
 
   <script src="../js/scripts.js"></script>
+  <script src="../js/followers.js"></script>
 </body>
 
 </html>
