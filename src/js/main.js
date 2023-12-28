@@ -50,7 +50,7 @@ fetch('http://43.202.230.2' + '/trends', {
     for (let i = 0; i < trendList.length; i++) {
       trendIdList.push(trendList[i].id);
       trendNameList.push(trendList[i].name);
-      trendImageList.push(BASEURL + '/' + trendList[i].image);
+      trendImageList.push('http://43.202.230.2' + '/' + trendList[i].image);
     }
 
     const outer = document.querySelector('.outer');
@@ -65,7 +65,7 @@ fetch('http://43.202.230.2' + '/trends', {
 
       const image = document.createElement('img');
       image.id = 'trend_image';
-      image.src = BASEURL + '/' + trendList[i].image; // 이미지 URL
+      image.src ='http://43.202.230.2' + '/' + trendList[i].image; // 이미지 URL
       image.alt = trendList[i].name; // 이미지 대체 텍스트
 
       const trendName = document.createElement('div');
