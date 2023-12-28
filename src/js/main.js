@@ -1,6 +1,7 @@
 BASEURL = ''
 
 // 처음 접속 시 토큰 저장
+
 let params = new URLSearchParams(window.location.search);
 let encodedData = params.get('user_access');
 access_token = '';
@@ -26,20 +27,20 @@ fetch('http://43.202.230.2/users/info', {
   .then(response => response.json())
   .then(data => {
 
-    
+
 
   })
 
 
-  //핫 트렌드 페이지 조회
-  fetch('http://43.202.230.2/trends', {
+//핫 트렌드 페이지 조회
+fetch('http://43.202.230.2/trends', {
   method: 'GET',
   headers: {
     'Authorization': 'Bearer ' + localStorage.getItem('access_tokens'),
     'Content-Type': 'application/json',
   },
   credentials: 'include',
-  })
+})
   .then(response => response.json())
   .then(data => {
     const trendList = data['trends'];
@@ -62,7 +63,7 @@ fetch('http://43.202.230.2/users/info', {
       slide.classList.add('trend');
 
       const link = document.createElement('a');
-      link.href = './trend.html?trend_id=' + trendList[i].id+'&trend_name='+trendList[i].name; // 트렌드 상세 페이지 링크
+      link.href = './trend.html?trend_id=' + trendList[i].id + '&trend_name=' + trendList[i].name; // 트렌드 상세 페이지 링크
 
       const image = document.createElement('img');
       image.id = 'trend_image';
