@@ -85,12 +85,13 @@ h2 {
   resize: none;
 }
 
-.comment .comment-buttons {
+.comment .comment-buttons, .reply-buttons {
   text-align: right;
 }
 
 .comment .comment-buttons .edit-button,
-.comment .comment-buttons .delete-button {
+.comment .comment-buttons .delete-button,
+.reply-button {
   background: none;
   border: none;
   text-decoration: underline;
@@ -107,11 +108,12 @@ h2 {
   margin-left: 1rem;
 }
 
-.edit-form {
+.edit-form, .reply-form {
   box-sizing: border-box;
   text-align: right;
 }
-.edit-form textarea {
+.edit-form textarea,
+.reply-form textarea {
   width: 100%;
   height: 5rem;
   border: none;
