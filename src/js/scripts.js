@@ -32,14 +32,20 @@ fetch(`${BASEURL}/users/info`, {
   },
 }).then(response => response.json())
   .then(data => {
-    const imageUrl = data.user['profile_img'].includes('k.kakaocdn.net') ?
-      data.user['profile_img'].replace('/media/http%3A/', 'http://') : `${BASEURL}${data.user['profile_img']}`;
-    userImg.style.backgroundImage = `url(${imageUrl})`;
+    document.querySelector('.user-profile a').href = `./user.html?user_id=${data.user_id}`;
+    if (data.user['profile_img']) {
+      const imageUrl = data.user['profile_img'].includes('k.kakaocdn.net') ?
+        data.user['profile_img'].replace('/media/http%3A/', 'http://') : `${BASEURL}${data.user['profile_img']}`;
+      userImg.style.backgroundImage = `url(${imageUrl})`;
+    }
     userNickname.textContent = data.user['nickname'];
   })
   .catch(error => {
     // 요청 실패 시 에러 처리
     console.error('프로필 정보를 가져오지 못했습니다:', error);
     //확인 알림창
-    confirm('프로필을 가져오지 못했습니다. 새로고침하거나 로그인을 해주세요.');
+    const isOk = confirm('사용자 정보가 없습니다. 로그인 페이지로 이동합니다.');
+    if (isOk) {
+      window.location.href = './login.html';
+    }
   });
