@@ -14,8 +14,6 @@ function fetchDataForEditUser(userId) {
     },
   }).then(response => response.json())
     .then(data => {
-      console.log('Received data:', data);
-
       // 닉네임 입력란에 데이터 설정
       nicknameInput.value = data.nickname;
 
@@ -68,7 +66,6 @@ document.getElementById('profileForm').addEventListener('submit', function (even
     .then(data => {
       if (data) {
         alert('프로필 변경이 완료되었습니다.')
-        console.log('user', data);
       }
     })
     .catch(error => {

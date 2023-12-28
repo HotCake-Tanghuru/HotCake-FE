@@ -19,8 +19,6 @@ async function fetchUserData() {
     });
     const data1 = await response1.json();
 
-    console.log(data1);
-    console.log(data1.user_id);
     userId = data1.user_id;
 
     // 두 번째 fetch 요청
@@ -33,7 +31,6 @@ async function fetchUserData() {
     });
     const data2 = await response2.json();
 
-    console.log(data2);
     const imageUrl = data2.profile_img.includes('k.kakaocdn.net') ?
       data2.profile_img.replace('/media/http%3A/', 'http://') : data2.profile_img;
 
@@ -53,9 +50,7 @@ async function fetchUserData() {
     });
     const data3 = await response3.json();
 
-    console.log(data3);
     data3.forEach((data) => {
-      console.log(data.trend_name)
       // 새로운 리스트 아이템과 링크 생성
       const listItem = document.createElement('li');
       const link = document.createElement('a');
