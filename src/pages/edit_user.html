@@ -34,31 +34,30 @@
     <!-- Begin main -->
     <main>
       <div class="content-container">
-        <form action="" class="edit-file">
+        <form id="profileForm">
           <!-- 프로필 사진 수정 -->
           <div class="profile-image" id="imagePreview"></div>
-            <div class="image-control">
-              <label for="imageUpload" class="btn image-upload-btn">사진 선택</label>
-              <input type="file" id="imageUpload" accept="image/*" onchange="previewImage()">
-              <button class="btn image-delete-btn" onclick="removeSelectedFile()">사진 삭제</button>
-            </div>
-        </form>
-        <form action="" class="edit-text">
-          <!-- 닉네임 수정 상자 -->
-          <div class="edit-nickname">
-            <label for="nickname">닉네임</label>
-            <input type="text" name="nickname" id="nickname" class="text-box" required>
+          <div class="image-control">
+            <label for="imageUpload" class="btn image-upload-btn">사진 선택</label>
+            <input type="file" id="imageUpload" accept="image/*" onchange="previewImage()">
+            <button class="btn image-delete-btn" onclick="removeSelectedFile()">사진 삭제</button>
           </div>
-          <!-- 자기소개 수정 상자 -->
-          <div class="edit-intro">
-            <label for="intro">자기소개</label>
-            <textarea name="intro" id="intro" cols="30" rows="10" class="intro-box"></textarea>
+          <div class="edit-text">
+            <!-- 닉네임 수정 상자 -->
+            <div class="edit-nickname">
+              <label for="nickname">닉네임</label>
+              <input type="text" name="nickname" id="nickname" class="text-box" required>
+            </div>
+            <!-- 자기소개 수정 상자 -->
+            <div class="edit-intro">
+              <label for="bio">자기소개</label>
+              <textarea name="bio" id="bio" cols="30" rows="10" class="intro-box"></textarea>
+            </div>
           </div>
           <!-- 수정 완료시 누르는 수정하기 버튼 -->
-          <div class="edit-success-button">
-            <button class="btn" onclick="editSuccess()">수정하기</button>
-          </div>
+          <button type="submit" class="btn edit-success-btn">수정하기</button>
         </form>
+        <button class="btn logout-btn">로그아웃</button>
       </div>
     </main>
     <!-- End main -->
@@ -81,6 +80,7 @@
     }
   </script>
   <script src="../js/scripts.js"></script>
+  <script src="../js/edit_user.js"></script>
 </body>
 
 </html>
