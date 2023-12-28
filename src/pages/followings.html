@@ -40,23 +40,22 @@
           <button type="submit">검색</button>
         </form>
 
-        <!-- 팔로잉하는 사용자, 이름, 팔로우 버튼 -->
+        <ul class="search-results" style="display: none;">
+          <!-- 검색 결과 -->
+        </ul>
+
+        <!-- 팔로잉하는 사용자, 이름, 팔로우 버튼-->
         <ul class="follow-list">
-          <li class="follow-user">
+           <!--<li class="follow-user">
             <div class="row-1">
               <div class="follow-user-image"></div>
-              <p class="follow-user-name">냐옹이</p>
+              <p class="follow-user-name">오르미</p>
             </div>
-            <button class="btn following-button">팔로우중</button>
-          </li>
-          <!-- 그다음 팔로잉.. -->
-          <li class="follow-user">
-            <div class="row-1">
-              <div class="follow-user-image"></div>
-              <p class="follow-user-name">멍멍이</p>
+            <div class="row-1 follow-buttons">
+              <button class="btn follower-button">팔로우</button>
+              <button class="btn delete-button">삭제</button>
             </div>
-            <button class="btn following-button">팔로우중</button>
-          </li>
+          </li> -->
         </ul>
       </div>
     </main>
@@ -75,6 +74,7 @@
   </div>
 
   <script src="../js/scripts.js"></script>
+  <script src="../js/followings.js"></script>
 </body>
 
 </html>
