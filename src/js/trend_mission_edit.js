@@ -7,6 +7,7 @@ const missionItemId = urlParams.get('trend_mission_item_id');
 
 const userId = localStorage.getItem('user_id');
 let trendName = '';
+let trendMissionId = 0;
 
 async function fetchMissionItemData(missionItemId) {
   try {
@@ -23,8 +24,10 @@ async function fetchMissionItemData(missionItemId) {
     }
 
     const missionItemData = await response.json();
+
     missionItem.textContent = missionItemData.trend_item_name;
     commentBox.value = missionItemData.content;
+    trendMissionId = missionItemData.trend_mission;
 
     // 2번째 fetch 요청 수행
     fetch(`${BASEURL}/trend-missions/${userId}`, {
@@ -78,7 +81,7 @@ document.getElementById('trendMissionEditBtn').addEventListener('click', functio
     .then(data => {
       if (data) {
         alert('변경이 완료되었습니다.')
-        window.location.href = `./trend_mission.html?trend_mission_id=${data.id}&trend_name=${trendName}&user_id=${userId}`;
+        window.location.href = `./trend_mission.html?trend_mission_id=${trendMissionId}&trend_name=${trendName}&user_id=${userId}`;
       }
     })
     .catch(error => {
