@@ -173,7 +173,7 @@ header {
   height: 2rem;
   border: 2px solid #9E7959;
   border-radius: 50%;
-  background: white url('profile.jpg') center/cover no-repeat;
+  background: white url('') center/cover no-repeat;
 }
 
 .navbar .user-profile .user-nickname {
