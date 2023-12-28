@@ -1,5 +1,3 @@
-BASEURL = ''
-
 let params = new URLSearchParams(window.location.search);
 let encodedData = params.get('user_access');
 let jsonData = atob(encodedData);
@@ -22,20 +20,20 @@ fetch('http://43.202.230.2/users/info', {
   .then(response => response.json())
   .then(data => {
 
-    
+
 
   })
 
 
-  //핫 트렌드 페이지 조회
-  fetch('http://43.202.230.2/trends', {
+//핫 트렌드 페이지 조회
+fetch('http://43.202.230.2/trends', {
   method: 'GET',
   headers: {
     'Authorization': 'Bearer ' + access_token,
     'Content-Type': 'application/json',
   },
   credentials: 'include',
-  })
+})
   .then(response => response.json())
   .then(data => {
     const trendList = data['trends'];
@@ -58,7 +56,7 @@ fetch('http://43.202.230.2/users/info', {
       slide.classList.add('trend');
 
       const link = document.createElement('a');
-      link.href = './trend.html?trend_id=' + trendList[i].id+'&trend_name='+trendList[i].name; // 트렌드 상세 페이지 링크
+      link.href = './trend.html?trend_id=' + trendList[i].id + '&trend_name=' + trendList[i].name; // 트렌드 상세 페이지 링크
 
       const image = document.createElement('img');
       image.id = 'trend_image';
