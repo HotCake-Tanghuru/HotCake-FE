@@ -1,5 +1,5 @@
 const urlParams = new URLSearchParams(window.location.search);
-const userId = urlParams.get('user');
+const userId = urlParams.get('user_id');
 
 const nicknameInput = document.getElementById('nickname');
 const introTextArea = document.getElementById('bio');
@@ -66,6 +66,7 @@ document.getElementById('profileForm').addEventListener('submit', function (even
     .then(data => {
       if (data) {
         alert('프로필 변경이 완료되었습니다.')
+        window.location.href = `./user.html?user_id=${userId}`
       }
     })
     .catch(error => {
