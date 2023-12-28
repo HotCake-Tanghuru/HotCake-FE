@@ -72,3 +72,29 @@
   height: 100px;
   object-fit: cover;
 }
+
+/* 슬라이드 바 */
+.outer {
+  position: relative;
+  width: 100%;
+  height: calc(100% * 20%);
+  max-height: 400px;
+  margin: 0 auto;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.inner-list {
+  display: flex;
+  transition: .3s ease-out;
+  height: 100%;
+}
+
+.inner {
+  border: 6px solid olive;
+  padding: 0 16px;
+}
+
+.button-list {
+  text-align: center;
+}

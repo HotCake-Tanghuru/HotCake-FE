@@ -13,23 +13,22 @@
     <div class="login-container">
       <div class="welcome">
         <img src="../src/assets/images/hotcake.png" alt="핫케이크">
-          <h1>핫케이크</h1>
-          <p>🥞 핫트렌드를 만나보고 나누어 보아요! 🥞</p>
+        <h1>핫케이크</h1>
+        <p>🥞 핫트렌드를 만나보고 나누어 보아요! 🥞</p>
       </div>
-      
+
       <button class="kakao-login-btn">
         <img src="../src/assets/images/kakao_login_large_wide.png" alt="카카오톡으로 로그인하기">
       </button>
     </div>
   </div>
-  <script>
-    //카카오 로그인 페이지로 이동
-    document.getElementsByClassName("kakao-login-btn")[0].onclick = function() {
-      location.href = "http://43.202.230.2/oauth/kakao/login";
-    }
-  </script>
 
-  <script src="../src/js/scripts.js"></script>
+  <script>
+    // 카카오 로그인 버튼을 눌렀을 때 로그인 페이지로 이동
+    document.querySelector(".kakao-login-btn").addEventListener('click', function () {
+      location.href = "http://43.202.230.2/oauth/kakao/login/";
+    });
+  </script>
 </body>
 
 </html>

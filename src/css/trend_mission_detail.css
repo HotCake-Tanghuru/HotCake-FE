@@ -1,4 +1,4 @@
-.trend-mission-detail{
+.trend-mission-detail {
   text-align: center;
 }
 
@@ -7,7 +7,7 @@
   max-width: 600px;
   height: calc(100vh * 0.5);
   max-height: 600px;
-  background: url(../assets/images/wintertravel1.png) center/contain no-repeat;
+  background: url(../assets/images/hotcake.png) center/contain no-repeat;
   outline: 1px solid var(--almond, #bc9982);
   margin: 1rem auto;
   color: var(--almond, #bc9982);
@@ -21,7 +21,7 @@
   padding: 0.5rem 1rem;
 }
 
-.image-control .image-upload-btn + input  {
+.image-control .image-upload-btn+input {
   display: none;
 }
 
@@ -38,7 +38,7 @@
   padding: 1rem;
   margin: 0 auto 1rem;
   border-radius: 0.5rem;
-  text-align:left;
+  text-align: left;
 }
 
 .comment-box {
@@ -61,7 +61,6 @@
 /* 웹킷 기반 브라우저에서 스크롤바 디자인 변경 */
 .comment-box::-webkit-scrollbar {
   width: 8px;
-  
 }
 
 .comment-box::-webkit-scrollbar-thumb {
@@ -69,6 +68,6 @@
   border-radius: 0.5rem;
 }
 
-.comment-box + button {
+.comment-box+button {
   margin-top: 1rem;
 }

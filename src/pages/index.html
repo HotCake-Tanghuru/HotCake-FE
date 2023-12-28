@@ -27,7 +27,7 @@
         <div class="user-profile">
           <a href="./user.html">
             <div class="user-img"></div>
-            <span class="user-nickname">닉네임</span>
+            <span class="user-nickname"></span>
           </a>
         </div>
       </div>
@@ -37,15 +37,27 @@
 
     <!-- Begin main -->
     <main>
+      <div class="outer">
+        <div class="inner-list">
+          <!-- 여기에 트렌드 리스트가 들어갑니다. -->
+
+          
+        </div>
+      </div>
+      
+      <div class="button-list">
+        <button class="btn" id="button-left">←</button>
+        <button class="btn" id="button-right">→</button>
+      </div>
       <!-- 상단 고정 트렌드 -->
-      <div class="trend">
+      <!--<div class="trend">
         <a href="./trends_detail.html">
-          <img src="../assets/images/winter.png" alt="겨울 사진">
-          <div class="dim">
+          <img id="trend_image" src="../assets/images/winter.png" alt="겨울 사진">
+          <div class="dim" id="trend_name">
             <strong>❄️겨울 여행지 추천❄️</strong>
           </div>
         </a>
-      </div>
+      </div> -->
       <div class="content-container">
         <!-- 팔로우한 사람들의 트렌드 인증 사진 -->
         <section>
@@ -114,34 +126,9 @@
     </footer>
     <!-- End footer -->
   </div>
-  <script>
-    let params = new URLSearchParams(window.location.search);
-    let encodedData = params.get('user_access');
-    let jsonData = atob(encodedData);
-    let data = JSON.parse(jsonData);
-    console.log(data);
-
-    access_token = data['access_token'];
-
-    // 접속중인 사용자 확인
-    
-    fetch('http://43.202.230.2/users/info', {
-      method: 'GET',
-      headers: {
-        'Authorization': 'Bearer ' + access_token,
-        'Content-Type': 'application/json',
-      },
-      credentials: 'include',
-    })
-    .then(response => response.json())
-    .then(data => {
-      console.log(data);
-    })
-  
-
-  </script>
 
   <script src="../js/scripts.js"></script>
+  <script src="../js/main.js"></script>
 </body>
 
 </html>

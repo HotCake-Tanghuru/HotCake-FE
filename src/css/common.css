@@ -173,7 +173,7 @@ header {
   height: 2rem;
   border: 2px solid #9E7959;
   border-radius: 50%;
-  background: white url('profile.jpg') center/cover no-repeat;
+  background: white url('../assets/images/hotcake.png') center/cover no-repeat;
 }
 
 .navbar .user-profile .user-nickname {
@@ -203,6 +203,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 0.5rem;
 }
 
 .hidden {
