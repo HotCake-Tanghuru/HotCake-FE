@@ -30,7 +30,8 @@
   cursor: pointer;
 }
 
-.follow-user {
+.follow-user,
+.search-user {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -38,7 +39,8 @@
   margin-bottom: 1rem;
 }
 
-.follow-user>div {
+.follow-user>div,
+.search-user>div {
   min-width: 120px;
   display: flex;
   justify-content: flex-start;
@@ -46,15 +48,17 @@
   gap: 0.5rem;
 }
 
-.follow-user-image {
+.follow-user-image,
+.search-user-image {
   width: 3rem;
   min-width: 50px;
   height: 3rem;
   border-radius: 50%;
-  background-color: var(--gray, #d9d9d9);
+  background: white url('../assets/images/hotcake.png') no-repeat center center / cover;
 }
 
-.follow-user-name {
+.follow-user-name,
+.search-user-name {
   white-space: nowrap;
   /* 텍스트가 한 줄로만 표시되도록 설정 */
   overflow: hidden;
@@ -67,3 +71,4 @@
   flex: 0 0 auto;
   gap: 0.5rem;
 }
+
