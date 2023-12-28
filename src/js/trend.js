@@ -51,7 +51,7 @@ const urlParams = new URLSearchParams(window.location.search);
 const trendId = urlParams.get('trend_id');
 const trendName = urlParams.get('trend_name');
 
-fetch('http://43.202.230.2/trends/' + trendId, {
+fetch(BASEURL+'/trends/' + trendId, {
   method: 'GET',
   headers: {
     'Authorization': 'Bearer ' + localStorage.getItem('access_tokens'),
@@ -93,7 +93,7 @@ fetch('http://43.202.230.2/trends/' + trendId, {
       numberOfParticipant = 0;
     } else{
       for (let i = 0; i < user_trend_list.length; i++) {
-        userImages.push('http://43.202.230.2/' + user_trend_list[i].profile_img);
+        userImages.push(BASEURL + '/' + user_trend_list[i].profile_img);
       }
     }
     
@@ -130,7 +130,7 @@ fetch('http://43.202.230.2/trends/' + trendId, {
 
       // 이미지 요소 생성
       const img = document.createElement('img');
-      img.src = 'http://43.202.230.2/' + itemList[i].image;
+      img.src = BASEURL + '/' + itemList[i].image;
       img.alt = itemList[i].title;
 
       // description 요소 생성
@@ -169,7 +169,7 @@ let isLiked = false;
 // 이미 좋아요 한 경우 하트를 빨간색으로 채웁니다.
 // 접속중인 사용자 확인
 
-fetch('http://43.202.230.2/users/info', {
+fetch(BASEURL + '/users/info', {
   method: 'GET',
   headers: {
     'Authorization': 'Bearer ' + localStorage.getItem('access_tokens'),
@@ -180,7 +180,7 @@ fetch('http://43.202.230.2/users/info', {
   .then(response => response.json())
   .then(data => {
     userId = data.user_id;
-    fetch('http://43.202.230.2/trends/' + userId + '/likelist', {
+    fetch(BASEURL + '/trends/' + userId + '/likelist', {
       method: 'GET',
       headers: {
         'Authorization': 'Bearer ' + localStorage.getItem('access_tokens'),
@@ -214,7 +214,7 @@ likeButton.addEventListener('click', function () {
     heart.style.fill = '#D7433A'; // 하트를 빨간색으로 채웁니다.
 
     // 좋아요 요청 api 호출
-    fetch('http://43.202.230.2/trends/' + trendId + '/likes', {
+    fetch(BASEURL + '/trends/' + trendId + '/likes', {
       method: 'PATCH',
       headers: {
         'Authorization': 'Bearer ' + localStorage.getItem('access_tokens'),
@@ -228,7 +228,7 @@ likeButton.addEventListener('click', function () {
     heart.style.fill = 'none'; // 하트를 원래대로 돌립니다.
 
     // 좋아요 취소 api 호출
-    fetch('http://43.202.230.2/trends/' + trendId+ '/likes', {
+    fetch(BASEURL + '/trends/' + trendId+ '/likes', {
       method: 'PATCH',
       headers: {
         'Authorization': 'Bearer ' + localStorage.getItem('access_tokens'),
@@ -243,7 +243,7 @@ likeButton.addEventListener('click', function () {
 
 function handleTrendAuthentication() {
   // 트렌드 미션 생성
-  fetch('http://43.202.230.2/trend-missions/create', {
+  fetch(BASEURL + '/trend-missions/create', {
       method: 'POST',
       headers: {
         'Authorization': 'Bearer ' + localStorage.getItem('access_tokens'),
@@ -257,7 +257,7 @@ function handleTrendAuthentication() {
     .then(response => response.json())
     .then(data => {
       // 트렌드 미션 페이지로 이동
-      window.location.href = './trend_mission.html?trend_mission_id=' + data.id;
+      window.location.href = './trend_mission.html?trend_mission_id=' + data.id + '&trend_name=' + trendName + '&user_id=' + userId;
     })
 
 }

@@ -1,5 +1,3 @@
-BASEURL = ''
-
 // 처음 접속 시 토큰 저장
 
 let params = new URLSearchParams(window.location.search);
@@ -16,7 +14,7 @@ if (encodedData != null) {
 
 
 // 접속중인 사용자 확인
-fetch('http://43.202.230.2/users/info', {
+fetch(BASEURL + '/users/info', {
   method: 'GET',
   headers: {
     'Authorization': 'Bearer ' + localStorage.getItem('access_tokens'),
@@ -33,7 +31,7 @@ fetch('http://43.202.230.2/users/info', {
 
 
 //핫 트렌드 페이지 조회
-fetch('http://43.202.230.2/trends', {
+fetch(BASEURL + '/trends', {
   method: 'GET',
   headers: {
     'Authorization': 'Bearer ' + localStorage.getItem('access_tokens'),
@@ -52,7 +50,7 @@ fetch('http://43.202.230.2/trends', {
     for (let i = 0; i < trendList.length; i++) {
       trendIdList.push(trendList[i].id);
       trendNameList.push(trendList[i].name);
-      trendImageList.push('http://43.202.230.2/' + trendList[i].image);
+      trendImageList.push(BASEURL + '/' + trendList[i].image);
     }
 
     const outer = document.querySelector('.outer');
@@ -67,7 +65,7 @@ fetch('http://43.202.230.2/trends', {
 
       const image = document.createElement('img');
       image.id = 'trend_image';
-      image.src = 'http://43.202.230.2/' + trendList[i].image; // 이미지 URL
+      image.src = BASEURL + '/' + trendList[i].image; // 이미지 URL
       image.alt = trendList[i].name; // 이미지 대체 텍스트
 
       const trendName = document.createElement('div');
