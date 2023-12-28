@@ -86,13 +86,20 @@ fetch('http://43.202.230.2/trends/' + trendId, {
       // '../assets/images/user1_image3.jpg',
       // '../assets/images/user2_image1.jpg'
     ];
+
+    let numberOfParticipant = 0;
     user_trend_list = data.users_with_trend
-    for (let i = 0; i < user_trend_list.length; i++) {
-      userImages.push('http://43.202.230.2/' + user_trend_list[i].profile_img);
+    if(user_trend_list[0]['message'] == '아직 트렌드 미션에 참여 중인 친구가 없습니다.'){
+      numberOfParticipant = 0;
+    } else{
+      for (let i = 0; i < user_trend_list.length; i++) {
+        userImages.push('http://43.202.230.2/' + user_trend_list[i].profile_img);
+      }
     }
+    
 
     // 사람 수를 나타내는 변수
-    const numberOfParticipant = userImages.length;
+    numberOfParticipant = userImages.length;
     const usersFrame = document.getElementById('usersFrame');
 
     // 사람 수만큼 요소를 생성

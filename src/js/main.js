@@ -1,20 +1,24 @@
 BASEURL = ''
 
+// 처음 접속 시 토큰 저장
 let params = new URLSearchParams(window.location.search);
 let encodedData = params.get('user_access');
-let jsonData = atob(encodedData);
-let data = JSON.parse(jsonData);
+access_token = '';
+if (encodedData != null) {
+  let jsonData = atob(encodedData);
+  let data = JSON.parse(jsonData);
+  access_token = data['access_token'];
+  localStorage.setItem('access_tokens', data.access_token);
+  localStorage.setItem('refresh_tokens', data.refresh_token);
+}
 
-access_token = data['access_token'];
 
-localStorage.setItem('access_tokens', data.access_token);
-localStorage.setItem('refresh_tokens', data.refresh_token);
 
 // 접속중인 사용자 확인
 fetch('http://43.202.230.2/users/info', {
   method: 'GET',
   headers: {
-    'Authorization': 'Bearer ' + access_token,
+    'Authorization': 'Bearer ' + localStorage.getItem('access_tokens'),
     'Content-Type': 'application/json',
   },
   credentials: 'include',
@@ -31,7 +35,7 @@ fetch('http://43.202.230.2/users/info', {
   fetch('http://43.202.230.2/trends', {
   method: 'GET',
   headers: {
-    'Authorization': 'Bearer ' + access_token,
+    'Authorization': 'Bearer ' + localStorage.getItem('access_tokens'),
     'Content-Type': 'application/json',
   },
   credentials: 'include',
@@ -89,8 +93,8 @@ fetch('http://43.202.230.2/users/info', {
     /*
       버튼에 이벤트 등록하기
     */
-    const buttonLeft = document.querySelector('.button-left');
-    const buttonRight = document.querySelector('.button-right');
+    const buttonLeft = document.getElementById('button-left');
+    const buttonRight = document.getElementById('button-right');
 
     buttonLeft.addEventListener('click', () => {
       currentIndex--;
