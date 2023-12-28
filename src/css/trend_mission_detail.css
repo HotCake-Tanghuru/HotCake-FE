@@ -61,7 +61,6 @@
 /* 웹킷 기반 브라우저에서 스크롤바 디자인 변경 */
 .comment-box::-webkit-scrollbar {
   width: 8px;
-
 }
 
 .comment-box::-webkit-scrollbar-thumb {
