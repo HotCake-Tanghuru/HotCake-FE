@@ -1,4 +1,4 @@
-const BASEURL = 'http://43.202.230.2';
+const BASEURL = 'http://3.38.185.80';
 const userImg = document.querySelector('.user-img');
 const userNickname = document.querySelector('.user-nickname');
 
