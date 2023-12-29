@@ -12,7 +12,7 @@ if (encodedData != null) {
 }
 
 //핫 트렌드 페이지 조회
-fetch('http://43.202.230.2' + '/trends', {
+fetch('http://3.38.185.80' + '/trends', {
   method: 'GET',
   headers: {
     'Authorization': 'Bearer ' + localStorage.getItem('access_tokens'),
@@ -31,7 +31,7 @@ fetch('http://43.202.230.2' + '/trends', {
     for (let i = 0; i < trendList.length; i++) {
       trendIdList.push(trendList[i].id);
       trendNameList.push(trendList[i].name);
-      trendImageList.push('http://43.202.230.2' + '/' + trendList[i].image);
+      trendImageList.push('http://3.38.185.80' + '/' + trendList[i].image);
     }
 
     const outer = document.querySelector('.outer');
@@ -46,7 +46,7 @@ fetch('http://43.202.230.2' + '/trends', {
 
       const image = document.createElement('img');
       image.id = 'trend_image';
-      image.src ='http://43.202.230.2' + '/' + trendList[i].image; // 이미지 URL
+      image.src ='http://3.38.185.80' + '/' + trendList[i].image; // 이미지 URL
       image.alt = trendList[i].name; // 이미지 대체 텍스트
 
       const trendName = document.createElement('div');
@@ -90,7 +90,7 @@ fetch('http://43.202.230.2' + '/trends', {
   })
 
 // 랜덤한 팔로우 데이터 조회
-fetch('http://43.202.230.2' + '/trend-missions/random', {
+fetch('http://3.38.185.80' + '/trend-missions/random', {
   method: 'GET',
   headers: {
     'Authorization': 'Bearer ' + localStorage.getItem('access_tokens'),
@@ -112,7 +112,7 @@ fetch('http://43.202.230.2' + '/trend-missions/random', {
       if (data['trend_item_list'][i].image == null) {
         imageList.push('./user.png');
       } else{
-        imageList.push('http://43.202.230.2' + data['trend_item_list'][i].image);
+        imageList.push('http://3.38.185.80' + data['trend_item_list'][i].image);
       }
     }
 
